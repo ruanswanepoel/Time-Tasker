@@ -9,9 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TimeTasker {
+
 	public partial class MainScreen : Form {
+
 		public MainScreen() {
 			InitializeComponent();
 		}
+
+		private void btnAdd_Click(object sender, EventArgs e) {
+
+		}
 	}
+
 }
