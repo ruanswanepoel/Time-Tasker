@@ -1,4 +1,4 @@
-﻿namespace TimeTasker.Source.Forms {
+﻿namespace TimeTasker {
 	partial class UserSettingsForm {
 		/// <summary>
 		/// Required designer variable.

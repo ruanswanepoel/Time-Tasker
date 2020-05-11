@@ -1,4 +1,5 @@
-﻿namespace TimeTasker.Source.Forms {
+﻿
+namespace TimeTasker {
 	partial class CalendarForm {
 		/// <summary>
 		/// Required designer variable.

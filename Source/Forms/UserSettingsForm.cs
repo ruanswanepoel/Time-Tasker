@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TimeTasker.Source.Forms {
+namespace TimeTasker {
 	public partial class UserSettingsForm : Form {
 		public UserSettingsForm() {
 			InitializeComponent();
