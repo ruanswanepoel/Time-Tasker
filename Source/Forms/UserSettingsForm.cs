@@ -8,17 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TimeTasker {
-
-	public partial class MainScreen : Form {
-
-		public MainScreen() {
+namespace TimeTasker.Source.Forms {
+	public partial class UserSettingsForm : Form {
+		public UserSettingsForm() {
 			InitializeComponent();
 		}
-
-		private void btnAdd_Click(object sender, EventArgs e) {
-
-		}
 	}
-
 }

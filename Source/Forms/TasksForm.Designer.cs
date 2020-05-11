@@ -1,6 +1,6 @@
 ﻿namespace TimeTasker {
 
-	partial class MainScreen {
+	partial class TasksForm {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
