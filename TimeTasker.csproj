@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\Controls\TaskControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\TaskControl.Designer.cs">
+      <DependentUpon>TaskControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\FormManager.cs" />
     <Compile Include="Source\Forms\CalendarForm.cs">
       <SubType>Form</SubType>
@@ -75,6 +81,9 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Source\Controls\TaskControl.resx">
+      <DependentUpon>TaskControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\TasksForm.resx">
       <DependentUpon>TasksForm.cs</DependentUpon>
     </EmbeddedResource>
