@@ -1,6 +1,8 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,12 +15,14 @@ namespace TimeTasker {
 		private const int initialTaskMarginY = 10;
 		private const int taskMarginY = 5;
 
-		private int taskCount = 0;
+		private readonly ObservableCollection<TaskControl> tasks = new ObservableCollection<TaskControl>();
 
 
 		public TasksForm() {
 
 			InitializeComponent();
+
+			tasks.CollectionChanged += Tasks_CollectionChanged;
 
 		}
 
@@ -29,16 +33,29 @@ namespace TimeTasker {
 			popup.Location = new Point((this.Width - popup.Width) / 2, (this.Height - popup.Height) / 2);
 			popup.BringToFront();
 
-			popup.OnTaskCreated += ShowTask;
+			popup.OnTaskCreated += AddTask;
 
 		}
 
-		private void ShowTask(TaskControl task) {
+		private void AddTask(TaskControl task) {
 
 			task.Parent = pnlTasks;
-			task.Location = new Point((this.Width - task.Width) / 2, (task.Height + taskMarginY) * taskCount + initialTaskMarginY);
+			tasks.Add(task);
+			task.SetContainer(tasks);
 
-			taskCount++;
+		}
+
+		private void CalculateTaskLocations() {
+
+			for (int i = 0; i < tasks.Count; i++) {
+				tasks[i].Location = new Point((this.Width - tasks[i].Width) / 2, (tasks[i].Height + taskMarginY) * i + initialTaskMarginY);
+			}
+
+		}
+
+		private void Tasks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
+
+			CalculateTaskLocations();
 
 		}
 

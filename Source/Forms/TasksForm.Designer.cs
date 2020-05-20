@@ -80,6 +80,7 @@
 			// 
 			// pnlTasks
 			// 
+			this.pnlTasks.AutoScroll = true;
 			this.pnlTasks.Location = new System.Drawing.Point(0, 50);
 			this.pnlTasks.Name = "pnlTasks";
 			this.pnlTasks.Size = new System.Drawing.Size(360, 550);

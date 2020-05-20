@@ -8,7 +8,7 @@ namespace TimeTasker {
 	public partial class TaskSettingsControl : UserControl {
 
 
-		private TaskControl task;
+		private readonly TaskControl task;
 
 
 		public TaskSettingsControl(TaskControl task) {
@@ -28,7 +28,7 @@ namespace TimeTasker {
 
 		private void btnDelete_Click(object sender, EventArgs e) {
 
-			task.Dispose();
+			task.Delete();
 			Dispose();
 
 		}

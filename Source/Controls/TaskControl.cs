@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.ObjectModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,6 +8,9 @@ using System.Windows.Forms;
 namespace TimeTasker {
 
 	public partial class TaskControl : UserControl {
+
+
+		public ObservableCollection<TaskControl> container;
 
 
 		public string Message {
@@ -18,6 +22,19 @@ namespace TimeTasker {
 		public TaskControl() {
 
 			InitializeComponent();
+
+		}
+
+		public void SetContainer(ObservableCollection<TaskControl> container) {
+
+			this.container = container;
+
+		}
+
+		public void Delete() {
+
+			container.Remove(this);
+			Dispose();
 
 		}
 
