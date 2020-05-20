@@ -65,6 +65,7 @@ namespace TimeTasker {
             this.btnMenu.Size = new System.Drawing.Size(50, 50);
             this.btnMenu.TabIndex = 5;
             this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // lblList
             // 

@@ -82,6 +82,11 @@ namespace TimeTasker {
 		{
 
 		}
+
+		private void btnMenu_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 
 }
