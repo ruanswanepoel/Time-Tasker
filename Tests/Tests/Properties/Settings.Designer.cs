@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Unit_Tests.Properties
+namespace Tests.Properties
 {
 
 

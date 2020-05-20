@@ -42,6 +42,17 @@ namespace Unit_Tests
         }
 
         [Test]
+        public void Test_Changing_Text_Of_Task()
+        {
+
+            _task = new TaskControl(_form);
+            _task.Message = "Hello world";
+            _form.AddTask(_task);
+            Assert.AreEqual(_form.Tasks[0].Message, "Hello world");
+        }
+
+
+        [Test]
         public void Test_Task_Is_Within_Screen()
         {
 

@@ -1,4 +1,4 @@
-﻿namespace Unit_Tests
+﻿namespace Tests
 {
     partial class Form1
     {
