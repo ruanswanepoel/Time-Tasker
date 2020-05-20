@@ -1,7 +1,6 @@
 ﻿
 using System;
 using System.Collections.ObjectModel;
-using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -10,7 +9,7 @@ namespace TimeTasker {
 	public partial class TaskControl : UserControl {
 
 
-		public ObservableCollection<TaskControl> container;
+		private Form parentForm;
 
 
 		public string Message {
@@ -19,31 +18,26 @@ namespace TimeTasker {
 		}
 
 
-		public TaskControl() {
+		public TaskControl(Form parentForm) {
 
 			InitializeComponent();
 
-		}
-
-		public void SetContainer(ObservableCollection<TaskControl> container) {
-
-			this.container = container;
+			this.parentForm = parentForm;
 
 		}
 
 		public void Delete() {
 
-			container.Remove(this);
+			ITimeTaskerForm f = (ITimeTaskerForm)parentForm;
+			f.Tasks.Remove(this);
+
 			Dispose();
 
 		}
 
 		private void lblText_Click(object sender, EventArgs e) {
 
-			TaskSettingsControl popup = new TaskSettingsControl(this);
-			popup.Parent = Parent;
-			popup.Location = new Point((Parent.Width - popup.Width) / 2, (Parent.Height - popup.Height) / 2);
-			popup.BringToFront();
+			new TaskEditForm(parentForm, this);
 
 		}
 

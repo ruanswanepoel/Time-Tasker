@@ -1,21 +1,24 @@
 ﻿
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows.Forms;
 
-
 namespace TimeTasker {
 
-	public partial class TasksForm : Form {
+	public partial class TasksForm : Form, ITimeTaskerForm {
 
 
 		private const int initialTaskMarginY = 10;
 		private const int taskMarginY = 5;
 
-		private readonly ObservableCollection<TaskControl> tasks = new ObservableCollection<TaskControl>();
+		public readonly ObservableCollection<TaskControl> tasks = new ObservableCollection<TaskControl>();
+
+
+		public ObservableCollection<TaskControl> Tasks {
+			get { return tasks; }
+		}
 
 
 		public TasksForm() {
@@ -28,12 +31,9 @@ namespace TimeTasker {
 
 		private void btnAdd_Click(object sender, EventArgs e) {
 
-			TaskCreateControl popup = new TaskCreateControl();
-			popup.Parent = this;
-			popup.Location = new Point((this.Width - popup.Width) / 2, (this.Height - popup.Height) / 2);
-			popup.BringToFront();
-
-			popup.OnTaskCreated += AddTask;
+			TaskCreateForm f = new TaskCreateForm(this);
+			f.OnTaskCreated += AddTask;
+			f.Show();
 
 		}
 
@@ -41,7 +41,6 @@ namespace TimeTasker {
 
 			task.Parent = pnlTasks;
 			tasks.Add(task);
-			task.SetContainer(tasks);
 
 		}
 
@@ -53,8 +52,13 @@ namespace TimeTasker {
 
 		}
 
+		private void OrderTasks() {
+			// TODO: Order tasks
+		}
+
 		private void Tasks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
 
+			OrderTasks();
 			CalculateTaskLocations();
 
 		}

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3F1152F-BE71-40F0-AA39-BFEA2ABCF803}</ProjectGuid>
+    <ProjectGuid>{384F8FA2-BD7D-4B0A-AB9B-D7414B71F4D3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TimeTasker</RootNamespace>
     <AssemblyName>TimeTasker</AssemblyName>
@@ -46,23 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Controls\TaskControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Source\Controls\TaskControl.Designer.cs">
       <DependentUpon>TaskControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Controls\TaskCreateControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Controls\TaskCreateControl.Designer.cs">
-      <DependentUpon>TaskCreateControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Controls\TaskSettingsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Controls\TaskSettingsControl.Designer.cs">
-      <DependentUpon>TaskSettingsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\FormManager.cs" />
     <Compile Include="Source\Forms\CalendarForm.cs">
@@ -71,40 +60,77 @@
     <Compile Include="Source\Forms\CalendarForm.Designer.cs">
       <DependentUpon>CalendarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\TaskCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\TaskCreateForm.Designer.cs">
+      <DependentUpon>TaskCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\TaskEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\TaskEditForm.Designer.cs">
+      <DependentUpon>TaskEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\TasksForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\TasksForm.Designer.cs">
       <DependentUpon>TasksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Program.cs" />
     <Compile Include="Source\Forms\UserSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\Forms\UserSettingsForm.Designer.cs">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\ITimeTaskerForm.cs" />
+    <Compile Include="Source\Program.cs" />
     <Compile Include="Source\Settings.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <EmbeddedResource Include="Source\Controls\TaskControl.resx">
       <DependentUpon>TaskControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Controls\TaskCreateControl.resx">
-      <DependentUpon>TaskCreateControl.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\CalendarForm.resx">
+      <DependentUpon>CalendarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Controls\TaskSettingsControl.resx">
-      <DependentUpon>TaskSettingsControl.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\TaskCreateForm.resx">
+      <DependentUpon>TaskCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\TaskEditForm.resx">
+      <DependentUpon>TaskEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\TasksForm.resx">
       <DependentUpon>TasksForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\UserSettingsForm.resx">
+      <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ButtonHamMenu.png" />
+    <Content Include="Resources\ButtonPlus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
