@@ -47,6 +47,7 @@
 			this.lblText.TabIndex = 2;
 			this.lblText.Text = "My task to complete";
 			this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.lblText.Click += new System.EventHandler(this.lblText_Click);
 			// 
 			// TaskControl
 			// 
