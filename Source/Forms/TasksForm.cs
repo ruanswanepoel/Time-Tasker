@@ -29,7 +29,7 @@ namespace TimeTasker {
 
 		}
 
-		private void btnAdd_Click(object sender, EventArgs e) {
+		public void btnAdd_Click(object sender, EventArgs e) {
 
 			TaskCreateForm f = new TaskCreateForm(this);
 			f.OnTaskCreated += AddTask;
@@ -37,29 +37,44 @@ namespace TimeTasker {
 
 		}
 
-		private void AddTask(TaskControl task) {
+		public void AddTask(TaskControl task) {
 
 			task.Parent = pnlTasks;
 			tasks.Add(task);
 
 		}
 
-		private void CalculateTaskLocations() {
-
+		public void CalculateTaskLocations() {
 			for (int i = 0; i < tasks.Count; i++) {
 				tasks[i].Location = new Point((this.Width - tasks[i].Width) / 2, (tasks[i].Height + taskMarginY) * i + initialTaskMarginY);
 			}
-
 		}
 
 		private void OrderTasks() {
 			// TODO: Order tasks
 		}
 
-		private void Tasks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
+		public void Tasks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
 
 			OrderTasks();
 			CalculateTaskLocations();
+
+		}
+
+
+
+
+		//Unit Testing Methods
+
+		public Exception CreateOutsidePoint(int i)
+		{
+			try { 
+			tasks[i].Location = new Point(555, 999);
+			} catch (Exception e)
+			{
+				return e;
+			}
+			return null;
 
 		}
 
