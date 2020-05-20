@@ -78,6 +78,10 @@ namespace TimeTasker {
 
 		}
 
+		private void pnlTasks_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
 	}
 
 }

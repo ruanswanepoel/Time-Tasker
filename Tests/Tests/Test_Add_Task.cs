@@ -19,6 +19,7 @@ namespace Unit_Tests
     {
         private TasksForm _form;
         private TaskControl _task;
+
         [SetUp]
         public void setup()
         {
