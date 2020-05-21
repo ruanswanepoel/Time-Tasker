@@ -53,6 +53,12 @@
     <Compile Include="Source\Controls\TaskControl.Designer.cs">
       <DependentUpon>TaskControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Controls\TaskList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Controls\TaskList.Designer.cs">
+      <DependentUpon>TaskList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\FormManager.cs" />
     <Compile Include="Source\Forms\CalendarForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="Source\Controls\TaskControl.resx">
       <DependentUpon>TaskControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Controls\TaskList.resx">
+      <DependentUpon>TaskList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>

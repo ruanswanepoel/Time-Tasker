@@ -25,6 +25,12 @@ namespace Tests
         }
 
         [Test]
+        public void Category_Equals_Zero_At_Initiation()
+        {
+
+        }
+
+        [Test]
         public void Add_Category()
         {
 
