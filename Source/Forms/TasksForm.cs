@@ -78,15 +78,6 @@ namespace TimeTasker {
 
 		}
 
-		private void pnlTasks_Paint(object sender, PaintEventArgs e)
-		{
-
-		}
-
-		private void btnMenu_Click(object sender, EventArgs e)
-		{
-
-		}
 	}
 
 }
