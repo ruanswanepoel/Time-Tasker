@@ -9,19 +9,19 @@ namespace TimeTasker {
 	public partial class TaskEditForm : Form {
 
 
-		private readonly TaskControl task;
+		private readonly TasksForm myForm;
+		private readonly Task myTask;
 
 
-		public TaskEditForm(Form baseForm, TaskControl task) {
+		public TaskEditForm(TasksForm form, Task task) {
 
 			InitializeComponent();
 
-			Bitmap bitmap = new Bitmap(baseForm.Width, baseForm.Height);
-			baseForm.DrawToBitmap(bitmap, new Rectangle(0, 0, baseForm.Width, baseForm.Height));
+			BackgroundImage = form.DarkenedBitmapFromForm();
 
-			BackgroundImage = bitmap;
+			myForm = form;
+			myTask = task;
 
-			this.task = task;
 			txtMessage.Text = task.Message;
 
 			Show();
@@ -36,14 +36,14 @@ namespace TimeTasker {
 
 		private void btnDelete_Click(object sender, EventArgs e) {
 
-			task.Delete();
+			myForm.RemoveTask(myTask);
 			Close();
 
 		}
 
 		private void btnSave_Click(object sender, EventArgs e) {
 
-			task.Message = txtMessage.Text;
+			myTask.SetMessage(txtMessage.Text);
 			Close();
 
 		}

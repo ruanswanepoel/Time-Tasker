@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Collections.ObjectModel;
 using System.Windows.Forms;
 
 
@@ -9,35 +8,32 @@ namespace TimeTasker {
 	public partial class TaskControl : UserControl {
 
 
-		private Form parentForm;
+		private readonly TasksForm myForm;
+		private readonly Task myTask;
 
 
-		public string Message {
-			get { return lblText.Text; }
-			set { lblText.Text = value; }
-		}
-
-
-		public TaskControl(Form parentForm) {
+		public TaskControl(TasksForm form, Task task) {
 
 			InitializeComponent();
 
-			this.parentForm = parentForm;
+			lblText.Text = task.Message;
+
+			myForm = form;
+			myTask = task;
+
+			myTask.TaskChanged += MyTask_TaskChanged;
 
 		}
 
-		public void Delete() {
+		private void MyTask_TaskChanged(object sender, TaskChangedEventArgs e) {
 
-			ITimeTaskerForm f = (ITimeTaskerForm)parentForm;
-			f.Tasks.Remove(this);
-
-			Dispose();
+			lblText.Text = myTask.Message;
 
 		}
 
 		private void lblText_Click(object sender, EventArgs e) {
 
-			new TaskEditForm(parentForm, this);
+			new TaskEditForm(myForm, myTask);
 
 		}
 

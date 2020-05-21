@@ -6,7 +6,9 @@ namespace TimeTasker {
 
 	public interface ITimeTaskerForm {
 
-		ObservableCollection<TaskControl> Tasks { get; }
+		TaskList Tasklist {
+			get;
+		}
 
 	}
 
