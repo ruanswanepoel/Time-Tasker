@@ -1,80 +1,63 @@
 ﻿
 using System;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows.Forms;
 
+
 namespace TimeTasker {
 
-	public partial class TasksForm : Form, ITimeTaskerForm {
+	public partial class TasksForm : Form {
 
 
-		private const int initialTaskMarginY = 10;
-		private const int taskMarginY = 5;
+		private const int c_INITIAL_MARGIN_Y = 60;
+		private const int c_MARGIN_Y = 5;
 
-		public readonly ObservableCollection<TaskControl> tasks = new ObservableCollection<TaskControl>();
-
-
-		public ObservableCollection<TaskControl> Tasks {
-			get { return tasks; }
-		}
+		private TaskList taskList = new TaskList();
 
 
 		public TasksForm() {
 
 			InitializeComponent();
 
-			tasks.CollectionChanged += Tasks_CollectionChanged;
+		}
+
+		public void DrawTasks() {
+
+			for (int i = Controls.Count - 1; i >= 0; i--)
+				if (Controls[i] is TaskControl)
+					Controls.RemoveAt(i);
+
+			for (int i = 0; i < taskList.Tasks.Count; i++) {
+				TaskControl t = new TaskControl(this, taskList.Tasks[i]);
+				t.Parent = this;
+				t.Location = new Point((Width - t.Width) / 2, (t.Height + c_MARGIN_Y) * i + c_INITIAL_MARGIN_Y);
+			}
+
+		}
+
+		public void AddTask(Task task) {
+
+			taskList.AddTask(task);
+			DrawTasks();
+
+		}
+
+		public void RemoveTask(Task task) {
+
+			taskList.RemoveTask(task);
+			DrawTasks();
+
+		}
+
+		private void btnMenu_Click(object sender, EventArgs e) {
+
+			new HamMenuForm(this);
 
 		}
 
 		public void btnAdd_Click(object sender, EventArgs e) {
 
-			TaskCreateForm f = new TaskCreateForm(this);
-			f.OnTaskCreated += AddTask;
-			f.Show();
-
-		}
-
-		public void AddTask(TaskControl task) {
-
-			task.Parent = pnlTasks;
-			tasks.Add(task);
-
-		}
-
-		public void CalculateTaskLocations() {
-			for (int i = 0; i < tasks.Count; i++) {
-				tasks[i].Location = new Point((this.Width - tasks[i].Width) / 2, (tasks[i].Height + taskMarginY) * i + initialTaskMarginY);
-			}
-		}
-
-		private void OrderTasks() {
-			// TODO: Order tasks
-		}
-
-		public void Tasks_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
-
-			OrderTasks();
-			CalculateTaskLocations();
-
-		}
-
-
-
-
-		//Unit Testing Methods
-
-		public Exception CreateOutsidePoint(int i)
-		{
-			try { 
-			tasks[i].Location = new Point(555, 999);
-			} catch (Exception e)
-			{
-				return e;
-			}
-			return null;
+			new TaskCreateForm(this);
 
 		}
 

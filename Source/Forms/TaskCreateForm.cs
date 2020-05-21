@@ -1,6 +1,5 @@
 ﻿
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -9,31 +8,25 @@ namespace TimeTasker {
 	public partial class TaskCreateForm : Form {
 
 
-		public delegate void OnTaskCreatedHandler(TaskControl task);
-		public event OnTaskCreatedHandler OnTaskCreated;
-
-		private Form parentForm;
+		private TasksForm myForm;
 
 
-		public TaskCreateForm(Form parentForm) {
+		public TaskCreateForm(TasksForm form) {
 
 			InitializeComponent();
 
-			this.parentForm = parentForm;
+			myForm = form;
 
-			Bitmap bitmap = new Bitmap(parentForm.Width, parentForm.Height);
-			parentForm.DrawToBitmap(bitmap, new Rectangle(0, 0, parentForm.Width, parentForm.Height));
+			BackgroundImage = form.DarkenedBitmapFromForm();
 
-			BackgroundImage = bitmap;
+			Show();
 
 		}
 
 		private void btnCreate_Click(object sender, EventArgs e) {
 
-			TaskControl task = new TaskControl(parentForm);
-			task.Message = txtMessage.Text;
-
-			OnTaskCreated?.Invoke(task);
+			Task task = new Task(txtMessage.Text, false);
+			myForm.AddTask(task);
 
 			Close();
 

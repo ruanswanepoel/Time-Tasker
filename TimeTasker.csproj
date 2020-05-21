@@ -53,12 +53,13 @@
     <Compile Include="Source\Controls\TaskControl.Designer.cs">
       <DependentUpon>TaskControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Controls\TaskList.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Source\Controls\TaskListControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Controls\TaskList.Designer.cs">
-      <DependentUpon>TaskList.cs</DependentUpon>
+    <Compile Include="Source\Controls\TaskListControl.Designer.cs">
+      <DependentUpon>TaskListControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\EventHandlers\EventHandlers.cs" />
     <Compile Include="Source\FormManager.cs" />
     <Compile Include="Source\Forms\CalendarForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +79,12 @@
     <Compile Include="Source\Forms\TaskEditForm.Designer.cs">
       <DependentUpon>TaskEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\Forms\HamMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\HamMenuForm.Designer.cs">
+      <DependentUpon>HamMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Forms\TasksForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +100,9 @@
     <Compile Include="Source\ITimeTaskerForm.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Source\Settings.cs" />
+    <Compile Include="Source\Task.cs" />
+    <Compile Include="Source\TaskList.cs" />
+    <Compile Include="Source\EventHandlers\EventArgs.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,8 +116,8 @@
     <EmbeddedResource Include="Source\Controls\TaskControl.resx">
       <DependentUpon>TaskControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Controls\TaskList.resx">
-      <DependentUpon>TaskList.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Controls\TaskListControl.resx">
+      <DependentUpon>TaskListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\CalendarForm.resx">
       <DependentUpon>CalendarForm.cs</DependentUpon>
@@ -117,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\TaskEditForm.resx">
       <DependentUpon>TaskEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\HamMenuForm.resx">
+      <DependentUpon>HamMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\TasksForm.resx">
       <DependentUpon>TasksForm.cs</DependentUpon>
