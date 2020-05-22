@@ -61,6 +61,20 @@ namespace TimeTasker {
 
 		}
 
-	}
+        private void TasksForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCalendar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUserSettings_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 
 }

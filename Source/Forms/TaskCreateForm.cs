@@ -10,7 +10,6 @@ namespace TimeTasker {
 
 		private TasksForm myForm;
 
-
 		public TaskCreateForm(TasksForm form) {
 
 			InitializeComponent();
@@ -37,7 +36,6 @@ namespace TimeTasker {
 			Close();
 
 		}
-
-	}
+    }
 
 }
