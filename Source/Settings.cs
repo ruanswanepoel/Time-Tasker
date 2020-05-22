@@ -1,40 +1,72 @@
 ﻿
-using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json.Linq;
 
 
 namespace TimeTasker {
 
+	/// <summary>
+	/// Handles all the AppData for the Application.
+	/// </summary>
 	public static class Settings {
 
+		private const string c_RESOURCES_FOLDER = "Resources\\";
+		private const string c_APPDATA_FOLDER = "Appdata\\";
+		private const string c_TASK_DATA_FILE = "taskdata.json";
 
-		private const string c_TASK_DATA_PATH = "";
-
-		private static List<TaskListControl> lists;
+		private static int startupListIndex = -1;
 
 
-		static Settings() {
+		public static string Dir => Directory.GetCurrentDirectory() + "\\";
+		public static string Resources => Dir + c_RESOURCES_FOLDER;
+		public static string Appdata => Resources + c_APPDATA_FOLDER;
+		public static string TaskDataFile => Appdata + c_TASK_DATA_FILE;
 
-			lists = LoadTaskLists();
+		public static List<TaskList> Lists { get; private set; }
+
+
+		/// <summary>
+		/// Initializes, verifies and loads all Appdata
+		/// </summary>
+		public static void Initialize() {
+
+			VerifyAppdata();
+			LoadTaskData();
 
 		}
 
-		private static List<TaskListControl> LoadTaskLists() {
+		/// <summary>
+		/// Gets the last <see cref="TaskList"/> that was open in the previous session.
+		/// </summary>
+		/// <returns>The startup <see cref="TaskList"/>.</returns>
+		public static TaskList GetStartupList() {
 
-			// TODO: Load lists and tasks from a file
-			return null;
+			if (startupListIndex == -1)
+				return null;
+
+			return Lists[startupListIndex];
 
 		}
 
-		public static List<TaskListControl> GetTaskLists() {
+		private static void VerifyAppdata() {
 
-			return lists;
+			// TODO: Check data integrity properly
+
+			Directory.CreateDirectory(Appdata);
 
 		}
 
-		public static TaskListControl GetStartupList() {
+		private static void LoadTaskData() {
 
-			return null;
+			string raw_data = File.ReadAllText(TaskDataFile);
+			JObject json = JObject.Parse(raw_data);
+
+			startupListIndex = json["StartupList"].ToObject<int>();
+
+			Lists = new List<TaskList>();
+			foreach (JToken token in json["Tasklists"])
+				Lists.Add(new TaskList(token));
 
 		}
 

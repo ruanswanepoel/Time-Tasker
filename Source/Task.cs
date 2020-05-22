@@ -1,5 +1,7 @@
 ﻿
+using Newtonsoft.Json.Linq;
 using System;
+
 
 namespace TimeTasker {
 
@@ -18,24 +20,45 @@ namespace TimeTasker {
 		/// Gets the message for the <see cref="Task"/>
 		/// </summary>
 		public string Message { get; private set; }
-
 		/// <summary>
-		/// Gets wether this <see cref="Task"/> is checked.
+		/// Gets wether the <see cref="Task"/> is checked.
 		/// </summary>
 		public bool IsChecked { get; private set; }
 
+		public DateTime DateCreated { get; private set; }
 
-		public Task()
-			: this("", false) { }
-		public Task(string msg, bool chk) {
+		public DateTime DueDate { get; private set; }
 
-			Message = msg;
-			IsChecked = chk;
+
+		public Task(JToken token) {
+
+			Message = token["Message"].ToString();
+			IsChecked = token["IsChecked"].ToObject<bool>();
+			DateCreated = DateTime.Parse(token["DateCreated"].ToString());
+			DueDate = DateTime.Parse(token["DueDate"].ToString());
+
+		}
+
+		public Task(string message)
+			: this(message, false) { }
+
+		public Task(string message, bool isChecked)
+			: this(message, isChecked, default) { }
+
+		public Task(string message, bool isChecked, DateTime dateCreated)
+			: this(message, isChecked, dateCreated, default) { }
+
+		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate) {
+
+			Message = message;
+			IsChecked = isChecked;
+			DateCreated = dateCreated;
+			DueDate = dueDate;
 
 		}
 
 		/// <summary>
-		/// Sets the message of this task to <paramref name="msg"/>
+		/// Sets the message of the <see cref="Task"/> to the given <see cref="string"/>
 		/// </summary>
 		/// <param name="msg">New task message</param>
 		public void SetMessage(string msg) {

@@ -1,0 +1,28 @@
+﻿{
+	"StartupList": 0,
+	"Tasklists": [
+		{
+			"Name": "My Tasks",
+			"SortOrder": "DateCreated",
+			"Tasks": [
+				{
+					"Message": "Do the dishes",
+					"IsChecked": false,
+					"DateCreated": "4/10/2020",
+					"DueDate": "4/10/2020"
+				}
+			]
+		},
+		{
+			"Name": "Uni",
+			"Tasks": [
+				{
+					"Message": "Homework",
+					"IsChecked": true,
+					"DateCreated": "4/10/2020",
+					"DueDate": "4/10/2020"
+				}
+			]
+		}
+	]
+}

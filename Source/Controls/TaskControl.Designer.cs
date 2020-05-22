@@ -23,48 +23,50 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.chkComplete = new System.Windows.Forms.CheckBox();
 			this.lblText = new System.Windows.Forms.Label();
+			this.btnCheckbox = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.btnCheckbox)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// chkComplete
-			// 
-			this.chkComplete.BackColor = System.Drawing.Color.Transparent;
-			this.chkComplete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkComplete.Location = new System.Drawing.Point(314, 0);
-			this.chkComplete.Name = "chkComplete";
-			this.chkComplete.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.chkComplete.Size = new System.Drawing.Size(26, 40);
-			this.chkComplete.TabIndex = 1;
-			this.chkComplete.UseVisualStyleBackColor = false;
 			// 
 			// lblText
 			// 
 			this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblText.Location = new System.Drawing.Point(0, 0);
 			this.lblText.Name = "lblText";
-			this.lblText.Size = new System.Drawing.Size(308, 40);
+			this.lblText.Size = new System.Drawing.Size(280, 40);
 			this.lblText.TabIndex = 2;
 			this.lblText.Text = "My task to complete";
 			this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.lblText.Click += new System.EventHandler(this.lblText_Click);
+			// 
+			// btnCheckbox
+			// 
+			this.btnCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnCheckbox.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnCheckbox.Location = new System.Drawing.Point(280, 0);
+			this.btnCheckbox.Name = "btnCheckbox";
+			this.btnCheckbox.Size = new System.Drawing.Size(40, 40);
+			this.btnCheckbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.btnCheckbox.TabIndex = 3;
+			this.btnCheckbox.TabStop = false;
+			this.btnCheckbox.Click += new System.EventHandler(this.btnCheckbox_Click);
 			// 
 			// TaskControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.LightSteelBlue;
+			this.Controls.Add(this.btnCheckbox);
 			this.Controls.Add(this.lblText);
-			this.Controls.Add(this.chkComplete);
 			this.Name = "TaskControl";
-			this.Size = new System.Drawing.Size(340, 40);
+			this.Size = new System.Drawing.Size(320, 40);
+			((System.ComponentModel.ISupportInitialize)(this.btnCheckbox)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.CheckBox chkComplete;
 		private System.Windows.Forms.Label lblText;
+		private System.Windows.Forms.PictureBox btnCheckbox;
 	}
 }

@@ -16,6 +16,8 @@ namespace TimeTasker {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
+			Settings.Initialize();
+
 			FormManager.LoadForm(new TasksForm());
 
 			Application.Run();

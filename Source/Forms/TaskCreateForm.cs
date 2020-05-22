@@ -25,7 +25,7 @@ namespace TimeTasker {
 
 		private void btnCreate_Click(object sender, EventArgs e) {
 
-			Task task = new Task(txtMessage.Text, false);
+			Task task = new Task(txtMessage.Text);
 			myForm.AddTask(task);
 
 			Close();

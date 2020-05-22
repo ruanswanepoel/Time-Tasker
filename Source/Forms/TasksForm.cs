@@ -9,42 +9,54 @@ namespace TimeTasker {
 	public partial class TasksForm : Form {
 
 
-		private const int c_INITIAL_MARGIN_Y = 60;
 		private const int c_MARGIN_Y = 5;
 
-		private TaskList taskList = new TaskList();
+		public TaskList Tasklist;
 
 
 		public TasksForm() {
 
 			InitializeComponent();
 
+			SetTasklist(Settings.GetStartupList());
+			Tasklist.Changed += Tasklist_Changed;
+
+		}
+
+		public void SetTasklist(TaskList list) {
+
+			Tasklist = list;
+			lblList.Text = list.Name;
+			DrawTasks();
+
 		}
 
 		public void DrawTasks() {
 
-			for (int i = Controls.Count - 1; i >= 0; i--)
-				if (Controls[i] is TaskControl)
-					Controls.RemoveAt(i);
+			pnlTasks.Controls.Clear();
 
-			for (int i = 0; i < taskList.Tasks.Count; i++) {
-				TaskControl t = new TaskControl(this, taskList.Tasks[i]);
-				t.Parent = this;
-				t.Location = new Point((Width - t.Width) / 2, (t.Height + c_MARGIN_Y) * i + c_INITIAL_MARGIN_Y);
+			for (int i = 0; i < Tasklist.Tasks.Count; i++) {
+				TaskControl t = new TaskControl(this, Tasklist.Tasks[i]);
+				t.Parent = pnlTasks;
+				t.Location = new Point((Width - t.Width) / 2, (t.Height + c_MARGIN_Y) * i);
 			}
 
 		}
 
 		public void AddTask(Task task) {
-
-			taskList.AddTask(task);
-			DrawTasks();
+			
+			Tasklist.AddTask(task);
 
 		}
 
 		public void RemoveTask(Task task) {
 
-			taskList.RemoveTask(task);
+			Tasklist.RemoveTask(task);
+
+		}
+
+		private void Tasklist_Changed(object sender, TaskListChangedEventArgs e) {
+
 			DrawTasks();
 
 		}
@@ -58,6 +70,12 @@ namespace TimeTasker {
 		public void btnAdd_Click(object sender, EventArgs e) {
 
 			new TaskCreateForm(this);
+
+		}
+
+		private void btnSortOrder_Click(object sender, EventArgs e) {
+
+			Tasklist.DoNextSortOrder();
 
 		}
 
