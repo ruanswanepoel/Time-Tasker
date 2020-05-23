@@ -1,7 +1,7 @@
 ﻿
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace TimeTasker {
 
@@ -111,6 +111,7 @@ namespace TimeTasker {
 			// TODO: Sort `Tasks` alphabetically
 
 			// ^^^
+			Tasks = Tasks.OrderBy(x => x.Message).ToList();
 
 			SortOrder = SortOrders.Alphabetical;
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
@@ -122,6 +123,7 @@ namespace TimeTasker {
 			// TODO: Sort `Tasks` by Task.DateCreated
 
 			// ^^^
+			Tasks = Tasks.OrderBy(x => x.DateCreated).ToList();
 
 			SortOrder = SortOrders.DateCreated;
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
@@ -133,14 +135,14 @@ namespace TimeTasker {
 			// TODO: Sort `Tasks` by Task.DueDate
 
 			// ^^^
-
+			Tasks = Tasks.OrderBy(x => x.DueDate).ToList();
 			SortOrder = SortOrders.DueDate;
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
 
 		}
 
 		private void SortByPriority() {
-
+			Tasks = Tasks.OrderBy(x => x.Priorty).ToList();
 			// TODO: Sort `Tasks` by Task.Priority
 
 			// ^^^
