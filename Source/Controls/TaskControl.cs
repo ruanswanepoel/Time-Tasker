@@ -28,9 +28,9 @@ namespace TimeTasker {
 		private void MyTask_TaskChanged(object sender, TaskChangedEventArgs e) {
 
 			if (e.ChangeType == TaskChangedEventArgs.ChangeTypes.Checked)
-				btnCheckbox.Image = Resources.ButtonPlus;
+				btnCheckbox.Image = Resources.CheckboxChecked;
 			else if (e.ChangeType == TaskChangedEventArgs.ChangeTypes.Unchecked)
-				btnCheckbox.Image = Resources.ButtonHamMenu;
+				btnCheckbox.Image = Resources.CheckboxEmpty;
 			else
 				lblText.Text = myTask.Message;
 

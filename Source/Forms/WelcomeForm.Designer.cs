@@ -27,17 +27,20 @@
             this.chkShowWelcome = new System.Windows.Forms.CheckBox();
             this.lblAppname = new System.Windows.Forms.Label();
             this.btnProceed = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnProceed)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Font = new System.Drawing.Font("SF Pro Display", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
             this.lblWelcome.Location = new System.Drawing.Point(110, 236);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(130, 32);
+            this.lblWelcome.Size = new System.Drawing.Size(131, 32);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome";
             // 
@@ -78,15 +81,51 @@
             this.btnProceed.TabStop = false;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(75, 134);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(215, 41);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Time Tasker";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(110, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 32);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Welcome";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(61, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 41);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Time Tasker";
+            // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(360, 650);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAppname);
             this.Controls.Add(this.chkShowWelcome);
             this.Controls.Add(this.btnProceed);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblWelcome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WelcomeForm";
@@ -104,5 +143,8 @@
 		private System.Windows.Forms.PictureBox btnProceed;
 		private System.Windows.Forms.CheckBox chkShowWelcome;
 		private System.Windows.Forms.Label lblAppname;
-	}
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+    }
 }

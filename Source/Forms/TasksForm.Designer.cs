@@ -142,7 +142,7 @@ namespace TimeTasker {
             // btnUserSettings
             // 
             this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault1;
+            this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault;
             this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
             this.btnUserSettings.Name = "btnUserSettings";
             this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
@@ -154,7 +154,7 @@ namespace TimeTasker {
             // btnCalendar
             // 
             this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault1;
+            this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault;
             this.btnCalendar.Location = new System.Drawing.Point(120, 0);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Size = new System.Drawing.Size(120, 50);
