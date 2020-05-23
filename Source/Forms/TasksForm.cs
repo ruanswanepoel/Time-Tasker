@@ -19,6 +19,7 @@ namespace TimeTasker {
 			InitializeComponent();
 
 			SetTasklist(Settings.StartupList);
+			btnSortOrder.Text = Tasklist.SortOrder.ToFriendlyString();
 			Tasklist.Changed += Tasklist_Changed;
 
 		}
@@ -57,6 +58,9 @@ namespace TimeTasker {
 
 		private void Tasklist_Changed(object sender, TaskListChangedEventArgs e) {
 
+			if (e.ChangeType != TaskListChangedEventArgs.ChangeTypes.Reordered)
+				Tasklist.Sort();
+
 			DrawTasks();
 
 		}
@@ -76,6 +80,7 @@ namespace TimeTasker {
 		private void btnSortOrder_Click(object sender, EventArgs e) {
 
 			Tasklist.DoNextSortOrder();
+			btnSortOrder.Text = Tasklist.SortOrder.ToFriendlyString();
 
 		}
 
