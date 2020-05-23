@@ -136,6 +136,9 @@
   <data name="UserIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\UserIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ButtonPlusAlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\ButtonPlusAlt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SettingsIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\SettingsIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,7 +160,7 @@
   <data name="CheckboxEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\CheckboxEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ButtonPlusAlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ButtonPlusAlt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CheckboxEmptyAlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\CheckboxEmptyAlt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

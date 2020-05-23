@@ -27,9 +27,6 @@
             this.lblColorTheme = new System.Windows.Forms.Label();
             this.lblHideCompleted = new System.Windows.Forms.Label();
             this.pnlNavbar = new System.Windows.Forms.Panel();
-            this.btnUserSettings = new System.Windows.Forms.PictureBox();
-            this.btnCalendar = new System.Windows.Forms.PictureBox();
-            this.btnTasks = new System.Windows.Forms.PictureBox();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblShowWelcome = new System.Windows.Forms.Label();
@@ -39,16 +36,19 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUserSettings = new System.Windows.Forms.PictureBox();
+            this.btnCalendar = new System.Windows.Forms.PictureBox();
+            this.btnTasks = new System.Windows.Forms.PictureBox();
             this.pnlNavbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTasks)).BeginInit();
             this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTasks)).BeginInit();
             this.SuspendLayout();
             // 
             // lblColorTheme
@@ -81,41 +81,6 @@
             this.pnlNavbar.Name = "pnlNavbar";
             this.pnlNavbar.Size = new System.Drawing.Size(360, 50);
             this.pnlNavbar.TabIndex = 5;
-            // 
-            // btnUserSettings
-            // 
-            this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconSelected;
-            this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
-            this.btnUserSettings.Name = "btnUserSettings";
-            this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
-            this.btnUserSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnUserSettings.TabIndex = 2;
-            this.btnUserSettings.TabStop = false;
-            // 
-            // btnCalendar
-            // 
-            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault;
-            this.btnCalendar.Location = new System.Drawing.Point(120, 0);
-            this.btnCalendar.Name = "btnCalendar";
-            this.btnCalendar.Size = new System.Drawing.Size(120, 50);
-            this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnCalendar.TabIndex = 1;
-            this.btnCalendar.TabStop = false;
-            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
-            // 
-            // btnTasks
-            // 
-            this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTasks.Image = global::TimeTasker.Properties.Resources.UserIconDefault;
-            this.btnTasks.Location = new System.Drawing.Point(0, 0);
-            this.btnTasks.Name = "btnTasks";
-            this.btnTasks.Size = new System.Drawing.Size(120, 50);
-            this.btnTasks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnTasks.TabIndex = 0;
-            this.btnTasks.TabStop = false;
-            this.btnTasks.Click += new System.EventHandler(this.btnTasks_Click);
             // 
             // pnlTitle
             // 
@@ -161,16 +126,17 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
             this.pictureBox5.Location = new System.Drawing.Point(274, 205);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
             this.pictureBox3.Location = new System.Drawing.Point(274, 317);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
@@ -179,7 +145,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
             this.pictureBox4.Location = new System.Drawing.Point(274, 426);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 50);
@@ -204,6 +170,41 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // btnUserSettings
+            // 
+            this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconSelected;
+            this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
+            this.btnUserSettings.Name = "btnUserSettings";
+            this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
+            this.btnUserSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnUserSettings.TabIndex = 2;
+            this.btnUserSettings.TabStop = false;
+            // 
+            // btnCalendar
+            // 
+            this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault;
+            this.btnCalendar.Location = new System.Drawing.Point(120, 0);
+            this.btnCalendar.Name = "btnCalendar";
+            this.btnCalendar.Size = new System.Drawing.Size(120, 50);
+            this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnCalendar.TabIndex = 1;
+            this.btnCalendar.TabStop = false;
+            this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
+            // 
+            // btnTasks
+            // 
+            this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTasks.Image = global::TimeTasker.Properties.Resources.UserIconDefault;
+            this.btnTasks.Location = new System.Drawing.Point(0, 0);
+            this.btnTasks.Name = "btnTasks";
+            this.btnTasks.Size = new System.Drawing.Size(120, 50);
+            this.btnTasks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnTasks.TabIndex = 0;
+            this.btnTasks.TabStop = false;
+            this.btnTasks.Click += new System.EventHandler(this.btnTasks_Click);
+            // 
             // UserSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,15 +227,15 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserSettingsForm";
             this.pnlNavbar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnTasks)).EndInit();
             this.pnlTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTasks)).EndInit();
             this.ResumeLayout(false);
 
 		}

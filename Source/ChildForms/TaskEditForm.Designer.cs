@@ -41,7 +41,7 @@
             this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(173)))), ((int)(((byte)(22)))));
-            this.btnSave.Location = new System.Drawing.Point(140, 281);
+            this.btnSave.Location = new System.Drawing.Point(140, 273);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 40);
             this.btnSave.TabIndex = 7;
@@ -53,10 +53,10 @@
             // 
             this.txtMessage.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMessage.Location = new System.Drawing.Point(25, 75);
+            this.txtMessage.Location = new System.Drawing.Point(25, 80);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(210, 43);
+            this.txtMessage.Size = new System.Drawing.Size(210, 48);
             this.txtMessage.TabIndex = 6;
             // 
             // btnDelete
@@ -64,7 +64,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.White;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btnDelete.Location = new System.Drawing.Point(25, 281);
+            this.btnDelete.Location = new System.Drawing.Point(25, 273);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(95, 40);
             this.btnDelete.TabIndex = 5;
@@ -77,7 +77,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(80, 18);
+            this.lblTitle.Location = new System.Drawing.Point(75, 19);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(111, 26);
             this.lblTitle.TabIndex = 4;
@@ -106,7 +106,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 219);
+            this.label3.Location = new System.Drawing.Point(22, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 13;
@@ -125,7 +125,7 @@
             "3",
             "4",
             "5"});
-            this.drpPriority.Location = new System.Drawing.Point(172, 218);
+            this.drpPriority.Location = new System.Drawing.Point(172, 210);
             this.drpPriority.Name = "drpPriority";
             this.drpPriority.Size = new System.Drawing.Size(63, 21);
             this.drpPriority.TabIndex = 12;
@@ -136,11 +136,11 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 146);
+            this.label2.Location = new System.Drawing.Point(22, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 16);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Message";
+            this.label2.Text = "Due Date";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -149,7 +149,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 57);
+            this.label1.Location = new System.Drawing.Point(22, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 16);
             this.label1.TabIndex = 10;

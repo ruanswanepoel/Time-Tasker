@@ -54,7 +54,6 @@ namespace TimeTasker {
 
 			e.Graphics.FillRectangle(linearGradientBrush, 0, 0, 360, 50);
 		}
-
-	}
+    }
 
 }
