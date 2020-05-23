@@ -1,7 +1,9 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 
 
@@ -13,27 +15,68 @@ namespace TimeTasker {
 	public static class Settings {
 
 		private static readonly string dir = Directory.GetCurrentDirectory() + "\\";
-		public static readonly string resources = dir + "Resources\\";
-		public static readonly string appdata = resources + "Appdata\\";
-		public static readonly string taskDataFile = appdata + "taskdata.json";
-		public static readonly string userDataFile = appdata + "userdata.json";
+		private static readonly string resources = dir + "Resources\\";
+		private static readonly string appdata = resources + "Appdata\\";
+		private static readonly string taskDataFile = appdata + "taskdata.json";
+		private static readonly string userDataFile = appdata + "userdata.json";
 
+		private static bool showWelcome = true;
+		private static bool hideCompletedTasks = false;
+		private static bool darkmode = false;
+		private static Color colorTheme = default;
 		private static int startupListIndex = -1;
 
 
 		public static bool ShowWelcome {
-			// TODO:
-			get { return true; }
-			set { }
+			get => showWelcome;
+			set {
+				showWelcome = value;
+				SaveTaskData();
+				// TODO: save to file
+			}
+		}
+
+		public static bool HideCompletedTasks {
+			get => hideCompletedTasks;
+			set {
+				hideCompletedTasks = value;
+				SaveTaskData();
+				// TODO: save to file
+			}
+		}
+
+		public static bool Darkmode {
+			get => darkmode;
+			set {
+				darkmode = value;
+				SaveTaskData();
+				// TODO: save to file
+			}
+		}
+
+		public static Color MainColor {
+			get => (darkmode) ? Colors.Dark : Colors.Light;
+		}
+
+		public static Color ColorTheme {
+			get => colorTheme;
+			set {
+				colorTheme = value;
+				SaveTaskData();
+				// TODO: save to file
+			}
+		}
+
+		public static Color TextColor {
+			get => Colors.TextColor;
 		}
 
 		public static Type StartupFormType {
-			// TODO:
-			get { return typeof(WelcomeForm); }
+			get => (ShowWelcome) ? typeof(WelcomeForm) : typeof(TasksForm);
 		}
 
 		public static TaskList StartupList {
-			get => (startupListIndex == -1) ? null : Lists[startupListIndex];
+			get => Lists[startupListIndex];
 		}
 
 		public static List<TaskList> Lists { get; private set; }
@@ -47,6 +90,8 @@ namespace TimeTasker {
 			VerifyAppdata();
 			LoadTaskData();
 			LoadUserData();
+
+			SaveTaskData();
 
 		}
 
@@ -73,7 +118,36 @@ namespace TimeTasker {
 
 		private static void LoadUserData() {
 
-			// TODO:
+			string raw_data = File.ReadAllText(userDataFile);
+			JObject json = JObject.Parse(raw_data);
+
+			showWelcome = json["ShowWelcome"].ToObject<bool>();
+			hideCompletedTasks = json["HideCompletedTasks"].ToObject<bool>();
+			darkmode = json["Darkmode"].ToObject<bool>();
+			colorTheme = Colors.FromName(json["ColorTheme"].ToString());
+
+		}
+
+		public static void SaveTaskData() {
+
+			string result = "{\n";
+			result += "\"StartupList\": " + startupListIndex.ToString() + ",\n";
+			result += "\"Tasklists\": [\n";
+
+			for (int i = 0; i < Lists.Count; i++) {
+				result += Lists[i].ToJson();
+				if (i != Lists.Count - 1)
+					result += ",";
+				result += "\n";
+			}
+
+			result += "]\n}";
+
+			File.WriteAllText(taskDataFile, result);
+
+		}
+
+		private static void SaveUserData() {
 
 		}
 

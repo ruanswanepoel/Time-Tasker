@@ -26,10 +26,10 @@ namespace TimeTasker {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TasksForm));
 			this.pnlTitle = new System.Windows.Forms.Panel();
 			this.btnMenu = new System.Windows.Forms.PictureBox();
 			this.lblList = new System.Windows.Forms.Label();
-			this.btnAdd = new System.Windows.Forms.PictureBox();
 			this.pnlNavbar = new System.Windows.Forms.Panel();
 			this.btnUserSettings = new System.Windows.Forms.PictureBox();
 			this.btnCalendar = new System.Windows.Forms.PictureBox();
@@ -38,14 +38,15 @@ namespace TimeTasker {
 			this.pnlSortSettings = new System.Windows.Forms.Panel();
 			this.lblSortOrder = new System.Windows.Forms.Label();
 			this.btnSortOrder = new System.Windows.Forms.Label();
+			this.btnAdd = new System.Windows.Forms.PictureBox();
 			this.pnlTitle.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
 			this.pnlNavbar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).BeginInit();
 			this.pnlSortSettings.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pnlTitle
@@ -62,7 +63,7 @@ namespace TimeTasker {
 			// btnMenu
 			// 
 			this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnMenu.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
 			this.btnMenu.Location = new System.Drawing.Point(0, 0);
 			this.btnMenu.Name = "btnMenu";
 			this.btnMenu.Size = new System.Drawing.Size(50, 50);
@@ -82,18 +83,6 @@ namespace TimeTasker {
 			this.lblList.Text = "Tasks";
 			this.lblList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// btnAdd
-			// 
-			this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAdd.Image = global::TimeTasker.Properties.Resources.ButtonPlus;
-			this.btnAdd.Location = new System.Drawing.Point(306, 545);
-			this.btnAdd.Name = "btnAdd";
-			this.btnAdd.Size = new System.Drawing.Size(50, 50);
-			this.btnAdd.TabIndex = 0;
-			this.btnAdd.TabStop = false;
-			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-			// 
 			// pnlNavbar
 			// 
 			this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(106)))), ((int)(((byte)(130)))));
@@ -108,7 +97,7 @@ namespace TimeTasker {
 			// btnUserSettings
 			// 
 			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnUserSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnUserSettings.Image")));
 			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
 			this.btnUserSettings.Name = "btnUserSettings";
 			this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
@@ -120,7 +109,7 @@ namespace TimeTasker {
 			// btnCalendar
 			// 
 			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
 			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
 			this.btnCalendar.Name = "btnCalendar";
 			this.btnCalendar.Size = new System.Drawing.Size(120, 50);
@@ -131,7 +120,7 @@ namespace TimeTasker {
 			// 
 			// btnTasks
 			// 
-			this.btnTasks.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnTasks.Image = ((System.Drawing.Image)(resources.GetObject("btnTasks.Image")));
 			this.btnTasks.Location = new System.Drawing.Point(0, 0);
 			this.btnTasks.Name = "btnTasks";
 			this.btnTasks.Size = new System.Drawing.Size(120, 50);
@@ -184,6 +173,18 @@ namespace TimeTasker {
 			this.btnSortOrder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSortOrder.Click += new System.EventHandler(this.btnSortOrder_Click);
 			// 
+			// btnAdd
+			// 
+			this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+			this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+			this.btnAdd.Location = new System.Drawing.Point(306, 545);
+			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(50, 50);
+			this.btnAdd.TabIndex = 0;
+			this.btnAdd.TabStop = false;
+			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			// 
 			// TasksForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,12 +203,12 @@ namespace TimeTasker {
 			this.Text = "Time Tasker";
 			this.pnlTitle.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
 			this.pnlNavbar.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).EndInit();
 			this.pnlSortSettings.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
 			this.ResumeLayout(false);
 
 		}

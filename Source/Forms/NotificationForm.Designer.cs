@@ -25,10 +25,14 @@ namespace TimeTasker {
 		/// </summary>
 		private void InitializeComponent() {
 			this.pnlNavbar = new System.Windows.Forms.Panel();
+			this.pnlTitle = new System.Windows.Forms.Panel();
+			this.lblTitle = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.btnUserSettings = new System.Windows.Forms.PictureBox();
 			this.btnCalendar = new System.Windows.Forms.PictureBox();
 			this.btnTasks = new System.Windows.Forms.PictureBox();
 			this.pnlNavbar.SuspendLayout();
+			this.pnlTitle.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).BeginInit();
@@ -45,10 +49,44 @@ namespace TimeTasker {
 			this.pnlNavbar.Size = new System.Drawing.Size(360, 50);
 			this.pnlNavbar.TabIndex = 5;
 			// 
+			// pnlTitle
+			// 
+			this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(106)))), ((int)(((byte)(130)))));
+			this.pnlTitle.Controls.Add(this.lblTitle);
+			this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+			this.pnlTitle.Margin = new System.Windows.Forms.Padding(2);
+			this.pnlTitle.Name = "pnlTitle";
+			this.pnlTitle.Size = new System.Drawing.Size(360, 50);
+			this.pnlTitle.TabIndex = 6;
+			// 
+			// lblTitle
+			// 
+			this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+			this.lblTitle.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTitle.ForeColor = System.Drawing.Color.White;
+			this.lblTitle.Location = new System.Drawing.Point(50, 0);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(260, 50);
+			this.lblTitle.TabIndex = 4;
+			this.lblTitle.Text = "Notifications";
+			this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label1
+			// 
+			this.label1.BackColor = System.Drawing.Color.Transparent;
+			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(50, 281);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(260, 50);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "There are no notifications";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// btnUserSettings
 			// 
 			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault;
 			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
 			this.btnUserSettings.Name = "btnUserSettings";
 			this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
@@ -60,7 +98,7 @@ namespace TimeTasker {
 			// btnCalendar
 			// 
 			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Default;
-			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconSelected;
 			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
 			this.btnCalendar.Name = "btnCalendar";
 			this.btnCalendar.Size = new System.Drawing.Size(120, 50);
@@ -71,7 +109,7 @@ namespace TimeTasker {
 			// btnTasks
 			// 
 			this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnTasks.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnTasks.Image = global::TimeTasker.Properties.Resources.UserIconDefault;
 			this.btnTasks.Location = new System.Drawing.Point(0, 0);
 			this.btnTasks.Name = "btnTasks";
 			this.btnTasks.Size = new System.Drawing.Size(120, 50);
@@ -86,12 +124,15 @@ namespace TimeTasker {
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.ClientSize = new System.Drawing.Size(360, 650);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.pnlTitle);
 			this.Controls.Add(this.pnlNavbar);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "NotificationForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CalendarForm";
 			this.pnlNavbar.ResumeLayout(false);
+			this.pnlTitle.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).EndInit();
@@ -105,5 +146,8 @@ namespace TimeTasker {
 		private System.Windows.Forms.PictureBox btnUserSettings;
 		private System.Windows.Forms.PictureBox btnCalendar;
 		private System.Windows.Forms.PictureBox btnTasks;
+		private System.Windows.Forms.Panel pnlTitle;
+		private System.Windows.Forms.Label lblTitle;
+		private System.Windows.Forms.Label label1;
 	}
 }
