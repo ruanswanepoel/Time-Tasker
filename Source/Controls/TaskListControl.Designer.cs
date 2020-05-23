@@ -23,34 +23,36 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblName = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// label1
+			// lblName
 			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(240, 40);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "My Tasks";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblName.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblName.ForeColor = System.Drawing.Color.White;
+			this.lblName.Location = new System.Drawing.Point(0, 0);
+			this.lblName.Name = "lblName";
+			this.lblName.Size = new System.Drawing.Size(234, 40);
+			this.lblName.TabIndex = 0;
+			this.lblName.Text = "My Tasks";
+			this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblName.Click += new System.EventHandler(this.lblName_Click);
 			// 
 			// TaskListControl
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.lblName);
 			this.Name = "TaskListControl";
-			this.Size = new System.Drawing.Size(240, 40);
+			this.Size = new System.Drawing.Size(234, 40);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblName;
 	}
 }

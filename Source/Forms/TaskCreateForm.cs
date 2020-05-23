@@ -10,7 +10,6 @@ namespace TimeTasker {
 
 		private TasksForm myForm;
 
-
 		public TaskCreateForm(TasksForm form) {
 
 			InitializeComponent();
@@ -25,7 +24,7 @@ namespace TimeTasker {
 
 		private void btnCreate_Click(object sender, EventArgs e) {
 
-			Task task = new Task(txtMessage.Text, false);
+			Task task = new Task(txtMessage.Text);
 			myForm.AddTask(task);
 
 			Close();
@@ -37,7 +36,6 @@ namespace TimeTasker {
 			Close();
 
 		}
-
-	}
+    }
 
 }

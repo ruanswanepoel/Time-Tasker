@@ -1,24 +1,65 @@
 ﻿
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
+
 
 namespace TimeTasker {
 
 	public partial class HamMenuForm : Form {
 
+		private const int c_INITIAL_MARGIN_Y = 10;
+		private const int c_MARGIN_Y = 5;
 
-		private Form parentForm;
+		private readonly TasksForm myForm;
+		private readonly List<TaskList> lists = new List<TaskList>();
 
 
-		public HamMenuForm(Form parentForm) {
+		public HamMenuForm(TasksForm form) {
 
 			InitializeComponent();
 
-			this.parentForm = parentForm;
+			myForm = form;
+			lists = Settings.Lists;
 
-			BackgroundImage = parentForm.DarkenedBitmapFromForm();
+			BackgroundImage = form.DarkenedBitmapFromForm();
 
+			DrawLists();
 			Show();
+
+		}
+
+		public void SelectList(TaskList list) {
+
+			myForm.SetTasklist(list);
+			Close();
+
+		}
+
+		public void DrawLists() {
+
+			pnlLists.Controls.Clear();
+
+			for (int i = 0; i < lists.Count; i++) {
+				TaskListControl t = new TaskListControl(this, lists[i]);
+				t.Parent = pnlLists;
+				t.Location = new Point((pnlLists.Width - t.Width) / 2, (t.Height + c_MARGIN_Y) * i + c_INITIAL_MARGIN_Y);
+			}
+
+		}
+
+		public void AddList(TaskList list) {
+
+			lists.Add(list);
+			DrawLists();
+
+		}
+
+		public void RemoveList(TaskList list) {
+
+			lists.Remove(list);
+			DrawLists();
 
 		}
 
@@ -28,7 +69,13 @@ namespace TimeTasker {
 
 		}
 
+		private void btnSubmit_Click(object sender, EventArgs e) {
 
+			TaskList newList = new TaskList(txtNewListName.Text);
+			AddList(newList);
+			txtNewListName.Text = "";
+
+		}
 
 	}
 

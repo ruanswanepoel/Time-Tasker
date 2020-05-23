@@ -26,6 +26,7 @@ namespace TimeTasker {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+
 			this.pnlTitle = new System.Windows.Forms.Panel();
 			this.btnMenu = new System.Windows.Forms.PictureBox();
 			this.lblList = new System.Windows.Forms.Label();
@@ -34,6 +35,10 @@ namespace TimeTasker {
 			this.btnUserSettings = new System.Windows.Forms.PictureBox();
 			this.btnCalendar = new System.Windows.Forms.PictureBox();
 			this.btnTasks = new System.Windows.Forms.PictureBox();
+			this.pnlTasks = new System.Windows.Forms.Panel();
+			this.pnlSortSettings = new System.Windows.Forms.Panel();
+			this.btnSortOrder = new System.Windows.Forms.Label();
+			this.lblSortOrder = new System.Windows.Forms.Label();
 			this.pnlTitle.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
@@ -41,6 +46,7 @@ namespace TimeTasker {
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).BeginInit();
+			this.pnlSortSettings.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlTitle
@@ -72,7 +78,7 @@ namespace TimeTasker {
 			this.lblList.ForeColor = System.Drawing.Color.White;
 			this.lblList.Location = new System.Drawing.Point(50, 0);
 			this.lblList.Name = "lblList";
-			this.lblList.Size = new System.Drawing.Size(298, 50);
+			this.lblList.Size = new System.Drawing.Size(260, 50);
 			this.lblList.TabIndex = 4;
 			this.lblList.Text = "Tasks";
 			this.lblList.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -130,12 +136,59 @@ namespace TimeTasker {
 			this.btnTasks.TabIndex = 0;
 			this.btnTasks.TabStop = false;
 			// 
+			// pnlTasks
+			// 
+			this.pnlTasks.AutoScroll = true;
+			this.pnlTasks.Location = new System.Drawing.Point(0, 80);
+			this.pnlTasks.Name = "pnlTasks";
+			this.pnlTasks.Size = new System.Drawing.Size(360, 464);
+			this.pnlTasks.TabIndex = 5;
+			// 
+			// pnlSortSettings
+			// 
+			this.pnlSortSettings.Controls.Add(this.lblSortOrder);
+			this.pnlSortSettings.Controls.Add(this.btnSortOrder);
+			this.pnlSortSettings.Location = new System.Drawing.Point(20, 52);
+			this.pnlSortSettings.Name = "pnlSortSettings";
+			this.pnlSortSettings.Size = new System.Drawing.Size(320, 25);
+			this.pnlSortSettings.TabIndex = 6;
+			// 
+			// btnSortOrder
+			// 
+			this.btnSortOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnSortOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnSortOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnSortOrder.ForeColor = System.Drawing.Color.White;
+			this.btnSortOrder.Location = new System.Drawing.Point(209, 0);
+			this.btnSortOrder.Name = "btnSortOrder";
+			this.btnSortOrder.Size = new System.Drawing.Size(111, 25);
+			this.btnSortOrder.TabIndex = 0;
+			this.btnSortOrder.Text = "Date Created";
+			this.btnSortOrder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnSortOrder.Click += new System.EventHandler(this.btnSortOrder_Click);
+			// 
+			// lblSortOrder
+			// 
+			this.lblSortOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblSortOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblSortOrder.ForeColor = System.Drawing.Color.White;
+			this.lblSortOrder.Location = new System.Drawing.Point(0, 0);
+			this.lblSortOrder.Name = "lblSortOrder";
+			this.lblSortOrder.Size = new System.Drawing.Size(60, 25);
+			this.lblSortOrder.TabIndex = 1;
+			this.lblSortOrder.Text = "Sort by:";
+			this.lblSortOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// TasksForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.ClientSize = new System.Drawing.Size(360, 650);
+			this.Controls.Add(this.pnlSortSettings);
+			this.Controls.Add(this.pnlTasks);
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.pnlNavbar);
 			this.Controls.Add(this.pnlTitle);
@@ -151,6 +204,7 @@ namespace TimeTasker {
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).EndInit();
+			this.pnlSortSettings.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -165,6 +219,10 @@ namespace TimeTasker {
 		private System.Windows.Forms.PictureBox btnUserSettings;
 		private System.Windows.Forms.PictureBox btnCalendar;
 		private System.Windows.Forms.PictureBox btnTasks;
+		private System.Windows.Forms.Panel pnlTasks;
+		private System.Windows.Forms.Panel pnlSortSettings;
+		private System.Windows.Forms.Label btnSortOrder;
+		private System.Windows.Forms.Label lblSortOrder;
 	}
 }
 

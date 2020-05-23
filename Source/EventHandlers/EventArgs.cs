@@ -11,7 +11,8 @@ namespace TimeTasker {
 
 		public enum ChangeTypes {
 			TaskAdded,
-			TaskRemoved
+			TaskRemoved,
+			Reordered
 		}
 
 		public Task Task { get; private set; }
