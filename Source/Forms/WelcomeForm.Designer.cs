@@ -24,9 +24,9 @@
 		/// </summary>
 		private void InitializeComponent() {
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.btnProceed = new System.Windows.Forms.PictureBox();
             this.chkShowWelcome = new System.Windows.Forms.CheckBox();
             this.lblAppname = new System.Windows.Forms.Label();
+            this.btnProceed = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnProceed)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,17 +40,6 @@
             this.lblWelcome.Size = new System.Drawing.Size(130, 32);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome";
-            // 
-            // btnProceed
-            // 
-            this.btnProceed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProceed.Image = global::TimeTasker.Properties.Resources.ButtonPlus;
-            this.btnProceed.Location = new System.Drawing.Point(289, 583);
-            this.btnProceed.Name = "btnProceed";
-            this.btnProceed.Size = new System.Drawing.Size(59, 55);
-            this.btnProceed.TabIndex = 1;
-            this.btnProceed.TabStop = false;
-            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
             // chkShowWelcome
             // 
@@ -77,6 +66,17 @@
             this.lblAppname.Size = new System.Drawing.Size(201, 40);
             this.lblAppname.TabIndex = 3;
             this.lblAppname.Text = "Time Tasker";
+            // 
+            // btnProceed
+            // 
+            this.btnProceed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProceed.Image = global::TimeTasker.Properties.Resources.ProceedIconDefault;
+            this.btnProceed.Location = new System.Drawing.Point(289, 583);
+            this.btnProceed.Name = "btnProceed";
+            this.btnProceed.Size = new System.Drawing.Size(50, 50);
+            this.btnProceed.TabIndex = 1;
+            this.btnProceed.TabStop = false;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
             // WelcomeForm
             // 

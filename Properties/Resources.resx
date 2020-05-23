@@ -124,6 +124,9 @@
   <data name="ButtonPlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\ButtonPlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SettingsIconDefault1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\SettingsIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CheckboxChecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\CheckboxChecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +145,9 @@
   <data name="UserIconSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\UserIconSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BellIconDefault1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\BellIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BellIconSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\BellIconSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,5 +159,8 @@
   </data>
   <data name="CheckboxEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\CheckboxEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ProceedIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\ProceedIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -85,7 +85,7 @@
             // btnUserSettings
             // 
             this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnUserSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnUserSettings.Image")));
+            this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconSelected;
             this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
             this.btnUserSettings.Name = "btnUserSettings";
             this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
@@ -96,7 +96,7 @@
             // btnCalendar
             // 
             this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCalendar.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendar.Image")));
+            this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault;
             this.btnCalendar.Location = new System.Drawing.Point(120, 0);
             this.btnCalendar.Name = "btnCalendar";
             this.btnCalendar.Size = new System.Drawing.Size(120, 50);
@@ -108,7 +108,7 @@
             // btnTasks
             // 
             this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTasks.Image = ((System.Drawing.Image)(resources.GetObject("btnTasks.Image")));
+            this.btnTasks.Image = global::TimeTasker.Properties.Resources.UserIconDefault;
             this.btnTasks.Location = new System.Drawing.Point(0, 0);
             this.btnTasks.Name = "btnTasks";
             this.btnTasks.Size = new System.Drawing.Size(120, 50);
