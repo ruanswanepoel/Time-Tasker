@@ -24,11 +24,18 @@ namespace TimeTasker {
 		/// Gets wether the <see cref="Task"/> is checked.
 		/// </summary>
 		public bool IsChecked { get; private set; }
-
+		/// <summary>
+		/// Get the date the <see cref="Task"/> was created.
+		/// </summary>
 		public DateTime DateCreated { get; private set; }
-
+		/// <summary>
+		/// Gets the date the <see cref="Task"/> is due.
+		/// </summary>
 		public DateTime DueDate { get; private set; }
-		
+		/// <summary>
+		/// Gets the priority the <see cref="Task"/> has.
+		/// Higher values have greater priority.
+		/// </summary>
 		public int Priority { get; private set; }
 
 

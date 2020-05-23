@@ -18,7 +18,8 @@ namespace TimeTasker {
 
 			Settings.Initialize();
 
-			FormManager.LoadForm(new TasksForm());
+			Form startForm = (Form)Activator.CreateInstance(Settings.StartupFormType);
+			FormManager.LoadForm(startForm);
 
 			Application.Run();
 
