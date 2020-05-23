@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace TimeTasker {
 
@@ -150,7 +151,7 @@ namespace TimeTasker {
 
 		private void SortByPriority() {
 
-			Tasks = Tasks.OrderBy(x => x.Priority).ToList();
+			Tasks = Tasks.OrderByDescending(x => x.Priority).ToList();
 			SortOrder = SortOrders.Priority;
 
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));

@@ -11,7 +11,7 @@ namespace TimeTasker {
 
 		private const int c_MARGIN_Y = 5;
 
-		public TaskList Tasklist;
+		public TaskList Tasklist { get; private set; }
 
 
 		public TasksForm() {
@@ -28,6 +28,7 @@ namespace TimeTasker {
 
 			Tasklist = list;
 			lblList.Text = list.Name;
+			Tasklist.Changed += Tasklist_Changed;
 			DrawTasks();
 
 		}

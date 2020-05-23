@@ -34,6 +34,8 @@ namespace TimeTasker {
 
 		public enum ChangeTypes { 
 			MessageChanged,
+			DateChanged,
+			PriorityChanged,
 			Checked,
 			Unchecked
 		}

@@ -23,6 +23,8 @@ namespace TimeTasker {
 			myTask = task;
 
 			txtMessage.Text = task.Message;
+			dtpDueDate.Value = task.DueDate;
+			drpPriority.SelectedIndex = task.Priority;
 
 			Show();
 
@@ -44,14 +46,12 @@ namespace TimeTasker {
 		private void btnSave_Click(object sender, EventArgs e) {
 
 			myTask.SetMessage(txtMessage.Text);
+			myTask.SetDueDate(dtpDueDate.Value);
+			myTask.SetPriority(drpPriority.SelectedIndex);
 			Close();
 
 		}
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-    }
+	
+	}
 
 }

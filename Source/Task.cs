@@ -82,6 +82,26 @@ namespace TimeTasker {
 
 		}
 
+		public void SetDueDate(DateTime date) {
+
+			if (DueDate == date)
+				return;
+
+			DueDate = date;
+			TaskChanged?.Invoke(this, new TaskChangedEventArgs(TaskChangedEventArgs.ChangeTypes.DateChanged));
+
+		}
+
+		public void SetPriority(int priority) {
+
+			if (Priority == priority)
+				return;
+
+			Priority = priority;
+			TaskChanged?.Invoke(this, new TaskChangedEventArgs(TaskChangedEventArgs.ChangeTypes.PriorityChanged));
+
+		}
+
 		/// <summary>
 		/// Checks this <see cref="Task"/>.
 		/// </summary>
