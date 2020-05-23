@@ -63,6 +63,26 @@ namespace TimeTasker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BellIconDefault {
+            get {
+                object obj = ResourceManager.GetObject("BellIconDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BellIconSelected {
+            get {
+                object obj = ResourceManager.GetObject("BellIconSelected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ButtonHamMenu {
             get {
                 object obj = ResourceManager.GetObject("ButtonHamMenu", resourceCulture);
@@ -76,6 +96,86 @@ namespace TimeTasker.Properties {
         internal static System.Drawing.Bitmap ButtonPlus {
             get {
                 object obj = ResourceManager.GetObject("ButtonPlus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CheckboxChecked {
+            get {
+                object obj = ResourceManager.GetObject("CheckboxChecked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CheckboxEmpty {
+            get {
+                object obj = ResourceManager.GetObject("CheckboxEmpty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SettingsIconDefault {
+            get {
+                object obj = ResourceManager.GetObject("SettingsIconDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SettingsIconSelected {
+            get {
+                object obj = ResourceManager.GetObject("SettingsIconSelected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ThemeBlue {
+            get {
+                object obj = ResourceManager.GetObject("ThemeBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ThemeRed {
+            get {
+                object obj = ResourceManager.GetObject("ThemeRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserIconDefault {
+            get {
+                object obj = ResourceManager.GetObject("UserIconDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserIconSelected {
+            get {
+                object obj = ResourceManager.GetObject("UserIconSelected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

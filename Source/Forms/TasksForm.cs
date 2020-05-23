@@ -22,6 +22,20 @@ namespace TimeTasker {
 			btnSortOrder.Text = Tasklist.SortOrder.ToFriendlyString();
 			Tasklist.Changed += Tasklist_Changed;
 
+			Draw();
+
+		}
+
+		public void Draw() {
+
+			BackColor = Settings.MainColor;
+			pnlTitle.BackColor = Settings.ColorTheme;
+			pnlNavbar.BackColor = Settings.ColorTheme;
+			lblSortOrder.ForeColor = Settings.TextColor;
+			btnSortOrder.ForeColor = Settings.TextColor;
+
+			DrawTasks();
+
 		}
 
 		public void SetTasklist(TaskList list) {
@@ -29,6 +43,7 @@ namespace TimeTasker {
 			Tasklist = list;
 			lblList.Text = list.Name;
 			Tasklist.Changed += Tasklist_Changed;
+
 			DrawTasks();
 
 		}
@@ -63,6 +78,7 @@ namespace TimeTasker {
 				Tasklist.Sort();
 
 			DrawTasks();
+			Settings.SaveTaskData();
 
 		}
 

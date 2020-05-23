@@ -42,7 +42,7 @@
 			// btnCheckbox
 			// 
 			this.btnCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCheckbox.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
+			this.btnCheckbox.Image = global::TimeTasker.Properties.Resources.CheckboxEmpty;
 			this.btnCheckbox.Location = new System.Drawing.Point(280, 0);
 			this.btnCheckbox.Name = "btnCheckbox";
 			this.btnCheckbox.Size = new System.Drawing.Size(40, 40);

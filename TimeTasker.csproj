@@ -50,6 +50,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Source\Colors.cs" />
     <Compile Include="Source\Controls\TaskControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +154,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Appdata\userdata.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Appdata\taskdata.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -161,9 +165,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\ButtonBellWhite.png" />
-    <Content Include="Resources\ButtonHamMenu.png" />
-    <Content Include="Resources\ButtonPlus.png" />
+    <None Include="Resources\Images\ThemeRed.png" />
+    <None Include="Resources\Images\ThemeBlue.png" />
+    <None Include="Resources\Images\SettingsIconSelected.png" />
+    <None Include="Resources\Images\UserIconDefault.png" />
+    <None Include="Resources\Images\SettingsIconDefault.png" />
+    <None Include="Resources\Images\BellIconDefault.png" />
+    <None Include="Resources\Images\BellIconSelected.png" />
+    <Content Include="Resources\Images\ButtonHamMenu.png" />
+    <Content Include="Resources\Images\ButtonPlus.png" />
+    <None Include="Resources\Images\UserIconSelected.png" />
+    <None Include="Resources\Images\CheckboxChecked.png" />
+    <None Include="Resources\Images\CheckboxEmpty.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

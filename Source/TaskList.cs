@@ -46,7 +46,13 @@ namespace TimeTasker {
 			foreach (JToken taskToken in token["Tasks"])
 				Tasks.Add(new Task(taskToken));
 
+			Changed += (object o, TaskListChangedEventArgs e) => {
+				Settings.SaveTaskData();
+			};
+
 			Sort();
+
+			Settings.SaveTaskData();
 
 		}
 
@@ -110,6 +116,9 @@ namespace TimeTasker {
 				}
 			}
 
+			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
+			Settings.SaveTaskData();
+
 		}
 
 		/// <summary>
@@ -122,12 +131,30 @@ namespace TimeTasker {
 
 		}
 
+		public string ToJson() {
+
+			string result = "{\n";
+			result += "\"Name\": \"" + Name + "\",\n";
+			result += "\"SortOrder\": \"" + SortOrder.ToString() + "\",\n";
+			result += "\"Tasks\": [\n";
+
+			for (int i = 0; i < Tasks.Count; i++) {
+				result += Tasks[i].ToJson();
+				if (i != Tasks.Count - 1)
+					result += ",";
+				result += "\n";
+			}
+
+			result += "]\n}";
+
+			return result;
+
+		}
+
 		private void SortByAlphabetical() {
 
 			Tasks = Tasks.OrderBy(x => x.Message).ToList();
 			SortOrder = SortOrders.Alphabetical;
-
-			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
 
 		}
 
@@ -136,8 +163,6 @@ namespace TimeTasker {
 			Tasks = Tasks.OrderBy(x => x.DateCreated).ToList();
 			SortOrder = SortOrders.DateCreated;
 
-			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
-
 		}
 
 		private void SortByDueDate() {
@@ -145,16 +170,12 @@ namespace TimeTasker {
 			Tasks = Tasks.OrderBy(x => x.DueDate).ToList();
 			SortOrder = SortOrders.DueDate;
 
-			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
-
 		}
 
 		private void SortByPriority() {
 
 			Tasks = Tasks.OrderByDescending(x => x.Priority).ToList();
 			SortOrder = SortOrders.Priority;
-
-			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
 
 		}
 		

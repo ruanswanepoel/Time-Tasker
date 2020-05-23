@@ -10,6 +10,17 @@ namespace TimeTasker {
 
 			InitializeComponent();
 
+			Draw();
+
+		}
+
+		public void Draw() {
+
+			BackColor = Settings.MainColor;
+			pnlTitle.BackColor = Settings.ColorTheme;
+			pnlNavbar.BackColor = Settings.ColorTheme;
+			label1.ForeColor = Settings.TextColor;
+
 		}
 
 		private void btnTasks_Click(object sender, System.EventArgs e) {

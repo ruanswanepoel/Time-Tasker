@@ -66,6 +66,12 @@ namespace TimeTasker {
 			DueDate = dueDate;
 			Priority = priority;
 
+			TaskChanged += (object o, TaskChangedEventArgs e) => {
+				Settings.SaveTaskData();
+			};
+
+			Settings.SaveTaskData();
+
 		}
 
 		/// <summary>
@@ -137,6 +143,22 @@ namespace TimeTasker {
 				Uncheck();
 			else
 				Check();
+
+		}
+
+		public string ToJson() {
+
+			string checkstr = (IsChecked) ? "true" : "false";
+
+			string result = "{\n";
+			result += "\"Message\": \"" + Message + "\",\n";
+			result += "\"IsChecked\": " + checkstr + ",\n";
+			result += "\"DateCreated\": \"" + DateCreated.ToString() + "\",\n";
+			result += "\"DueDate\": \"" + DueDate.ToString() + "\",\n";
+			result += "\"Priority\": " + Priority.ToString() + "\n";
+			result += "}";
+
+			return result;
 
 		}
 
