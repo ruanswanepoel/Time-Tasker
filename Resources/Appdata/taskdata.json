@@ -9,7 +9,8 @@
 					"Message": "Do the dishes",
 					"IsChecked": false,
 					"DateCreated": "4/10/2020",
-					"DueDate": "4/10/2020"
+					"DueDate": "4/10/2020",
+					"Priority": 0
 				}
 			]
 		},
@@ -20,7 +21,8 @@
 					"Message": "Homework",
 					"IsChecked": true,
 					"DateCreated": "4/10/2020",
-					"DueDate": "4/10/2020"
+					"DueDate": "4/10/2020",
+					"Priority": 0
 				}
 			]
 		}

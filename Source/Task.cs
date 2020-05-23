@@ -28,6 +28,8 @@ namespace TimeTasker {
 		public DateTime DateCreated { get; private set; }
 
 		public DateTime DueDate { get; private set; }
+		
+		public int Priority { get; private set; }
 
 
 		public Task(JToken token) {
@@ -36,24 +38,26 @@ namespace TimeTasker {
 			IsChecked = token["IsChecked"].ToObject<bool>();
 			DateCreated = DateTime.Parse(token["DateCreated"].ToString());
 			DueDate = DateTime.Parse(token["DueDate"].ToString());
+			Priority = token["Priority"].ToObject<int>();
 
 		}
 
 		public Task(string message)
 			: this(message, false) { }
-
 		public Task(string message, bool isChecked)
 			: this(message, isChecked, default) { }
-
 		public Task(string message, bool isChecked, DateTime dateCreated)
 			: this(message, isChecked, dateCreated, default) { }
+		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate)
+			: this(message, isChecked, dateCreated, dueDate, 0) { }
 
-		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate) {
+		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate, int priority) {
 
 			Message = message;
 			IsChecked = isChecked;
 			DateCreated = dateCreated;
 			DueDate = dueDate;
+			Priority = priority;
 
 		}
 

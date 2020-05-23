@@ -15,8 +15,8 @@ namespace TimeTasker {
 		public enum SortOrders {
 			Alphabetical,
 			DateCreated,
-			DueDate
-
+			DueDate,
+			Priority
 		}
 
 		/// <summary>
@@ -133,6 +133,17 @@ namespace TimeTasker {
 			// ^^^
 
 			SortOrder = SortOrders.DueDate;
+			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
+
+		}
+
+		private void SortByPriority() {
+
+			// TODO: Sort `Tasks` by Task.Priority
+
+			// ^^^
+
+			SortOrder = SortOrders.Priority;
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
 
 		}
