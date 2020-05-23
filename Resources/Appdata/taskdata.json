@@ -6,16 +6,38 @@
 			"SortOrder": "DateCreated",
 			"Tasks": [
 				{
-					"Message": "Do the dishes",
+					"Message": "a - 4 - 3 - 2",
 					"IsChecked": false,
 					"DateCreated": "4/10/2020",
+					"DueDate": "3/10/2020",
+					"Priority": 2
+				},
+				{
+					"Message": "b - 1 - 4 - 3",
+					"IsChecked": false,
+					"DateCreated": "1/10/2020",
 					"DueDate": "4/10/2020",
-					"Priority": 0
+					"Priority": 3
+				},
+				{
+					"Message": "c - 2 - 1 - 4",
+					"IsChecked": false,
+					"DateCreated": "2/10/2020",
+					"DueDate": "1/10/2020",
+					"Priority": 4
+				},
+				{
+					"Message": "d - 3 - 2 - 1",
+					"IsChecked": false,
+					"DateCreated": "3/10/2020",
+					"DueDate": "2/10/2020",
+					"Priority": 1
 				}
 			]
 		},
 		{
 			"Name": "Uni",
+			"SortOrder": "DateCreated",
 			"Tasks": [
 				{
 					"Message": "Homework",

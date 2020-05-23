@@ -11,7 +11,7 @@ namespace TimeTasker {
 
 		private const int c_MARGIN_Y = 5;
 
-		public TaskList Tasklist;
+		public TaskList Tasklist { get; private set; }
 
 
 		public TasksForm() {
@@ -19,6 +19,7 @@ namespace TimeTasker {
 			InitializeComponent();
 
 			SetTasklist(Settings.StartupList);
+			btnSortOrder.Text = Tasklist.SortOrder.ToFriendlyString();
 			Tasklist.Changed += Tasklist_Changed;
 
 		}
@@ -27,6 +28,7 @@ namespace TimeTasker {
 
 			Tasklist = list;
 			lblList.Text = list.Name;
+			Tasklist.Changed += Tasklist_Changed;
 			DrawTasks();
 
 		}
@@ -57,6 +59,9 @@ namespace TimeTasker {
 
 		private void Tasklist_Changed(object sender, TaskListChangedEventArgs e) {
 
+			if (e.ChangeType != TaskListChangedEventArgs.ChangeTypes.Reordered)
+				Tasklist.Sort();
+
 			DrawTasks();
 
 		}
@@ -76,6 +81,7 @@ namespace TimeTasker {
 		private void btnSortOrder_Click(object sender, EventArgs e) {
 
 			Tasklist.DoNextSortOrder();
+			btnSortOrder.Text = Tasklist.SortOrder.ToFriendlyString();
 
 		}
 

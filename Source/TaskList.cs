@@ -1,7 +1,9 @@
 ﻿
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace TimeTasker {
 
@@ -38,21 +40,28 @@ namespace TimeTasker {
 		public TaskList(JToken token) {
 
 			Name = token["Name"].ToString();
-			//SortOrder = (SortOrders)Enum.Parse(typeof(SortOrders), token["SortOrder"].ToString());
-
 			Tasks = new List<Task>();
+			SortOrder = SortOrdersExtentionMethods.FromString(token["SortOrder"].ToString());
+
 			foreach (JToken taskToken in token["Tasks"])
 				Tasks.Add(new Task(taskToken));
+
+			Sort();
 
 		}
 
 		public TaskList(string name)
 			: this(name, new List<Task>()) { }
+		public TaskList(string name, List<Task> tasks)
+			: this(name, tasks, SortOrders.Alphabetical) { }
 
-		public TaskList(string name, List<Task> tasks) {
+		public TaskList(string name, List<Task> tasks, SortOrders sortOrder) {
 
 			Name = name;
 			Tasks = tasks;
+			SortOrder = sortOrder;
+
+			Sort();
 
 		}
 
@@ -80,75 +89,124 @@ namespace TimeTasker {
 
 		}
 
-		/// <summary>
-		/// Reorders the list according to the next item in the <see cref="TaskList"/>.<see cref="SortOrders"/>
-		/// </summary>
-		public void DoNextSortOrder() {
+		public void Sort() {
 
 			switch (SortOrder) {
 				case SortOrders.Alphabetical: {
-					SortByDateCreated();
+					SortByAlphabetical();
 					break;
 				}
 				case SortOrders.DateCreated: {
-					SortByDueDate();
+					SortByDateCreated();
 					break;
 				}
 				case SortOrders.DueDate: {
-					SortByPriority();
+					SortByDueDate();
 					break;
 				}
 				case SortOrders.Priority: {
-					SortByAlphabetical();
+					SortByPriority();
 					break;
 				}
 			}
 
 		}
 
+		/// <summary>
+		/// Reorders the list according to the next item in the <see cref="TaskList"/>.<see cref="SortOrders"/>
+		/// </summary>
+		public void DoNextSortOrder() {
+
+			SortOrder = SortOrder.NextItem();
+			Sort();
+
+		}
+
 		private void SortByAlphabetical() {
 
-			// TODO: Sort `Tasks` alphabetically
-
-			// ^^^
 			Tasks = Tasks.OrderBy(x => x.Message).ToList();
-
 			SortOrder = SortOrders.Alphabetical;
+
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
 
 		}
 
 		private void SortByDateCreated() {
 
-			// TODO: Sort `Tasks` by Task.DateCreated
-
-			// ^^^
 			Tasks = Tasks.OrderBy(x => x.DateCreated).ToList();
-
 			SortOrder = SortOrders.DateCreated;
+
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
 
 		}
 
 		private void SortByDueDate() {
 
-			// TODO: Sort `Tasks` by Task.DueDate
-
-			// ^^^
 			Tasks = Tasks.OrderBy(x => x.DueDate).ToList();
 			SortOrder = SortOrders.DueDate;
+
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
 
 		}
 
 		private void SortByPriority() {
-			//Tasks = Tasks.OrderBy(x => x.Priorty).ToList();
-			// TODO: Sort `Tasks` by Task.Priority
 
-			// ^^^
-
+			Tasks = Tasks.OrderByDescending(x => x.Priority).ToList();
 			SortOrder = SortOrders.Priority;
+
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
+
+		}
+		
+	}
+
+	public static class SortOrdersExtentionMethods {
+
+		public static string ToFriendlyString(this TaskList.SortOrders obj) {
+
+			string val = obj.ToString();
+			string result = "";
+
+			for (int i = 0; i < val.Length; i++) {
+				if (i != 0 && Char.IsUpper(val[i]))
+					result += " ";
+				result += val[i];
+			}
+
+			return result;
+
+		}
+
+		public static TaskList.SortOrders FromString(string str) {
+
+			return (TaskList.SortOrders)Enum.Parse(typeof(TaskList.SortOrders), str);
+
+		}
+
+		public static TaskList.SortOrders NextItem(this TaskList.SortOrders obj) {
+
+			TaskList.SortOrders sortOrder = TaskList.SortOrders.Alphabetical;
+
+			switch (obj) {
+				case TaskList.SortOrders.Alphabetical: {
+					sortOrder = TaskList.SortOrders.DateCreated;
+					break;
+				}
+				case TaskList.SortOrders.DateCreated: {
+					sortOrder = TaskList.SortOrders.DueDate;
+					break;
+				}
+				case TaskList.SortOrders.DueDate: {
+					sortOrder = TaskList.SortOrders.Priority;
+					break;
+				}
+				case TaskList.SortOrders.Priority: {
+					sortOrder = TaskList.SortOrders.Alphabetical;
+					break;
+				}
+			}
+
+			return sortOrder;
 
 		}
 

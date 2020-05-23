@@ -17,6 +17,7 @@ namespace TimeTasker {
 			myForm = form;
 
 			BackgroundImage = form.DarkenedBitmapFromForm();
+			drpPriority.SelectedIndex = 0;
 
 			Show();
 
@@ -24,7 +25,7 @@ namespace TimeTasker {
 
 		private void btnCreate_Click(object sender, EventArgs e) {
 
-			Task task = new Task(txtMessage.Text);
+			Task task = new Task(txtMessage.Text, false, DateTime.Now, dtpDueDate.Value, drpPriority.SelectedIndex);
 			myForm.AddTask(task);
 
 			Close();
