@@ -18,7 +18,7 @@ namespace TimeTasker {
 
 			InitializeComponent();
 
-			SetTasklist(Settings.GetStartupList());
+			SetTasklist(Settings.StartupList);
 			Tasklist.Changed += Tasklist_Changed;
 
 		}
@@ -76,6 +76,18 @@ namespace TimeTasker {
 		private void btnSortOrder_Click(object sender, EventArgs e) {
 
 			Tasklist.DoNextSortOrder();
+
+		}
+
+		private void btnCalendar_Click(object sender, EventArgs e) {
+
+			this.LoadForm(new NotificationForm());
+
+		}
+
+		private void btnUserSettings_Click(object sender, EventArgs e) {
+
+			this.LoadForm(new UserSettingsForm());
 
 		}
 

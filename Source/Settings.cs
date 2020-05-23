@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json.Linq;
@@ -11,17 +12,29 @@ namespace TimeTasker {
 	/// </summary>
 	public static class Settings {
 
-		private const string c_RESOURCES_FOLDER = "Resources\\";
-		private const string c_APPDATA_FOLDER = "Appdata\\";
-		private const string c_TASK_DATA_FILE = "taskdata.json";
+		private static readonly string dir = Directory.GetCurrentDirectory() + "\\";
+		public static readonly string resources = dir + "Resources\\";
+		public static readonly string appdata = resources + "Appdata\\";
+		public static readonly string taskDataFile = appdata + "taskdata.json";
+		public static readonly string userDataFile = appdata + "userdata.json";
 
 		private static int startupListIndex = -1;
 
 
-		public static string Dir => Directory.GetCurrentDirectory() + "\\";
-		public static string Resources => Dir + c_RESOURCES_FOLDER;
-		public static string Appdata => Resources + c_APPDATA_FOLDER;
-		public static string TaskDataFile => Appdata + c_TASK_DATA_FILE;
+		public static bool ShowWelcome {
+			// TODO:
+			get { return true; }
+			set { }
+		}
+
+		public static Type StartupFormType {
+			// TODO:
+			get { return typeof(WelcomeForm); }
+		}
+
+		public static TaskList StartupList {
+			get => (startupListIndex == -1) ? null : Lists[startupListIndex];
+		}
 
 		public static List<TaskList> Lists { get; private set; }
 
@@ -33,19 +46,7 @@ namespace TimeTasker {
 
 			VerifyAppdata();
 			LoadTaskData();
-
-		}
-
-		/// <summary>
-		/// Gets the last <see cref="TaskList"/> that was open in the previous session.
-		/// </summary>
-		/// <returns>The startup <see cref="TaskList"/>.</returns>
-		public static TaskList GetStartupList() {
-
-			if (startupListIndex == -1)
-				return null;
-
-			return Lists[startupListIndex];
+			LoadUserData();
 
 		}
 
@@ -53,13 +54,13 @@ namespace TimeTasker {
 
 			// TODO: Check data integrity properly
 
-			Directory.CreateDirectory(Appdata);
+			Directory.CreateDirectory(appdata);
 
 		}
 
 		private static void LoadTaskData() {
 
-			string raw_data = File.ReadAllText(TaskDataFile);
+			string raw_data = File.ReadAllText(taskDataFile);
 			JObject json = JObject.Parse(raw_data);
 
 			startupListIndex = json["StartupList"].ToObject<int>();
@@ -67,6 +68,12 @@ namespace TimeTasker {
 			Lists = new List<TaskList>();
 			foreach (JToken token in json["Tasklists"])
 				Lists.Add(new TaskList(token));
+
+		}
+
+		private static void LoadUserData() {
+
+			// TODO:
 
 		}
 

@@ -1,4 +1,4 @@
-﻿namespace TimeTasker.Source.Forms {
+﻿namespace TimeTasker {
 	partial class WelcomeForm {
 		/// <summary>
 		/// Required designer variable.
@@ -40,15 +40,17 @@
 			this.lblWelcome.Size = new System.Drawing.Size(130, 32);
 			this.lblWelcome.TabIndex = 0;
 			this.lblWelcome.Text = "Welcome";
-			this.lblWelcome.Click += new System.EventHandler(this.lblWelcome_Click);
 			// 
 			// btnProceed
 			// 
-			this.btnProceed.Location = new System.Drawing.Point(207, 583);
+			this.btnProceed.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnProceed.Image = global::TimeTasker.Properties.Resources.ButtonPlus;
+			this.btnProceed.Location = new System.Drawing.Point(289, 583);
 			this.btnProceed.Name = "btnProceed";
-			this.btnProceed.Size = new System.Drawing.Size(141, 55);
+			this.btnProceed.Size = new System.Drawing.Size(59, 55);
 			this.btnProceed.TabIndex = 1;
 			this.btnProceed.TabStop = false;
+			this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
 			// 
 			// chkShowWelcome
 			// 
@@ -63,6 +65,7 @@
 			this.chkShowWelcome.TabIndex = 2;
 			this.chkShowWelcome.Text = "Show on startup";
 			this.chkShowWelcome.UseVisualStyleBackColor = true;
+			this.chkShowWelcome.CheckedChanged += new System.EventHandler(this.chkShowWelcome_CheckedChanged);
 			// 
 			// lblAppname
 			// 
@@ -87,6 +90,7 @@
 			this.Controls.Add(this.lblWelcome);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "WelcomeForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "WelcomeForm";
 			((System.ComponentModel.ISupportInitialize)(this.btnProceed)).EndInit();
 			this.ResumeLayout(false);

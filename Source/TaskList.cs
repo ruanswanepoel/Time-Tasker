@@ -142,7 +142,7 @@ namespace TimeTasker {
 		}
 
 		private void SortByPriority() {
-			Tasks = Tasks.OrderBy(x => x.Priorty).ToList();
+			//Tasks = Tasks.OrderBy(x => x.Priorty).ToList();
 			// TODO: Sort `Tasks` by Task.Priority
 
 			// ^^^

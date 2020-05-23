@@ -38,8 +38,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,28 +64,28 @@
     </Compile>
     <Compile Include="Source\EventHandlers\EventHandlers.cs" />
     <Compile Include="Source\FormManager.cs" />
-    <Compile Include="Source\Forms\CalendarForm.cs">
+    <Compile Include="Source\Forms\NotificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\CalendarForm.Designer.cs">
-      <DependentUpon>CalendarForm.cs</DependentUpon>
+    <Compile Include="Source\Forms\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\TaskCreateForm.cs">
+    <Compile Include="Source\ChildForms\TaskCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\TaskCreateForm.Designer.cs">
+    <Compile Include="Source\ChildForms\TaskCreateForm.Designer.cs">
       <DependentUpon>TaskCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\TaskEditForm.cs">
+    <Compile Include="Source\ChildForms\TaskEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\TaskEditForm.Designer.cs">
+    <Compile Include="Source\ChildForms\TaskEditForm.Designer.cs">
       <DependentUpon>TaskEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Forms\HamMenuForm.cs">
+    <Compile Include="Source\ChildForms\HamMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\Forms\HamMenuForm.Designer.cs">
+    <Compile Include="Source\ChildForms\HamMenuForm.Designer.cs">
       <DependentUpon>HamMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Forms\TasksForm.cs">
@@ -97,6 +99,12 @@
     </Compile>
     <Compile Include="Source\Forms\UserSettingsForm.Designer.cs">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Forms\WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\Forms\WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Program.cs" />
     <Compile Include="Source\Settings.cs" />
@@ -114,16 +122,16 @@
     <EmbeddedResource Include="Source\Controls\TaskListControl.resx">
       <DependentUpon>TaskListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\CalendarForm.resx">
-      <DependentUpon>CalendarForm.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Forms\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\TaskCreateForm.resx">
+    <EmbeddedResource Include="Source\ChildForms\TaskCreateForm.resx">
       <DependentUpon>TaskCreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\TaskEditForm.resx">
+    <EmbeddedResource Include="Source\ChildForms\TaskEditForm.resx">
       <DependentUpon>TaskEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Forms\HamMenuForm.resx">
+    <EmbeddedResource Include="Source\ChildForms\HamMenuForm.resx">
       <DependentUpon>HamMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\TasksForm.resx">
@@ -131,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Forms\UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Forms\WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

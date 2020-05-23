@@ -26,7 +26,6 @@ namespace TimeTasker {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-
 			this.pnlTitle = new System.Windows.Forms.Panel();
 			this.btnMenu = new System.Windows.Forms.PictureBox();
 			this.lblList = new System.Windows.Forms.Label();
@@ -37,8 +36,8 @@ namespace TimeTasker {
 			this.btnTasks = new System.Windows.Forms.PictureBox();
 			this.pnlTasks = new System.Windows.Forms.Panel();
 			this.pnlSortSettings = new System.Windows.Forms.Panel();
-			this.btnSortOrder = new System.Windows.Forms.Label();
 			this.lblSortOrder = new System.Windows.Forms.Label();
+			this.btnSortOrder = new System.Windows.Forms.Label();
 			this.pnlTitle.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
@@ -88,7 +87,7 @@ namespace TimeTasker {
 			this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnAdd.Image = global::TimeTasker.Properties.Resources.ButtonPlus;
-			this.btnAdd.Location = new System.Drawing.Point(305, 545);
+			this.btnAdd.Location = new System.Drawing.Point(306, 545);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(50, 50);
 			this.btnAdd.TabIndex = 0;
@@ -108,6 +107,7 @@ namespace TimeTasker {
 			// 
 			// btnUserSettings
 			// 
+			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
 			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
 			this.btnUserSettings.Name = "btnUserSettings";
@@ -115,9 +115,11 @@ namespace TimeTasker {
 			this.btnUserSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.btnUserSettings.TabIndex = 2;
 			this.btnUserSettings.TabStop = false;
+			this.btnUserSettings.Click += new System.EventHandler(this.btnUserSettings_Click);
 			// 
 			// btnCalendar
 			// 
+			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
 			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
 			this.btnCalendar.Name = "btnCalendar";
@@ -125,6 +127,7 @@ namespace TimeTasker {
 			this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.btnCalendar.TabIndex = 1;
 			this.btnCalendar.TabStop = false;
+			this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
 			// 
 			// btnTasks
 			// 
@@ -153,6 +156,19 @@ namespace TimeTasker {
 			this.pnlSortSettings.Size = new System.Drawing.Size(320, 25);
 			this.pnlSortSettings.TabIndex = 6;
 			// 
+			// lblSortOrder
+			// 
+			this.lblSortOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+			this.lblSortOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblSortOrder.ForeColor = System.Drawing.Color.White;
+			this.lblSortOrder.Location = new System.Drawing.Point(0, 0);
+			this.lblSortOrder.Name = "lblSortOrder";
+			this.lblSortOrder.Size = new System.Drawing.Size(60, 25);
+			this.lblSortOrder.TabIndex = 1;
+			this.lblSortOrder.Text = "Sort by:";
+			this.lblSortOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// btnSortOrder
 			// 
 			this.btnSortOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -167,19 +183,6 @@ namespace TimeTasker {
 			this.btnSortOrder.Text = "Date Created";
 			this.btnSortOrder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSortOrder.Click += new System.EventHandler(this.btnSortOrder_Click);
-			// 
-			// lblSortOrder
-			// 
-			this.lblSortOrder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-			this.lblSortOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblSortOrder.ForeColor = System.Drawing.Color.White;
-			this.lblSortOrder.Location = new System.Drawing.Point(0, 0);
-			this.lblSortOrder.Name = "lblSortOrder";
-			this.lblSortOrder.Size = new System.Drawing.Size(60, 25);
-			this.lblSortOrder.TabIndex = 1;
-			this.lblSortOrder.Text = "Sort by:";
-			this.lblSortOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// TasksForm
 			// 
