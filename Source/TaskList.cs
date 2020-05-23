@@ -1,8 +1,6 @@
 ﻿
 using Newtonsoft.Json.Linq;
-using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 
 namespace TimeTasker {
@@ -97,6 +95,10 @@ namespace TimeTasker {
 					break;
 				}
 				case SortOrders.DueDate: {
+					SortByPriority();
+					break;
+				}
+				case SortOrders.Priority: {
 					SortByAlphabetical();
 					break;
 				}
