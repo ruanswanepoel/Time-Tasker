@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -11,7 +12,7 @@ namespace TimeTasker {
 
 			InitializeComponent();
 
-			pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
+			//pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
 
 			Draw();
 
@@ -23,6 +24,7 @@ namespace TimeTasker {
 			pnlTitle.BackColor = Settings.ColorTheme;
 			pnlNavbar.BackColor = Settings.ColorTheme;
 			label1.ForeColor = Settings.TextColor;
+			btnCalendar.BackColor = Settings.AppColor;
 		}
 
 		private void btnTasks_Click(object sender, System.EventArgs e) {
@@ -36,6 +38,7 @@ namespace TimeTasker {
 			this.LoadForm(new UserSettingsForm());
 
 		}
+
 
 		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e) {
 

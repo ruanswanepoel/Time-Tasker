@@ -23,7 +23,7 @@ namespace TimeTasker {
 			btnSortOrder.Text = Tasklist.SortOrder.ToFriendlyString();
 			Tasklist.Changed += Tasklist_Changed;
 
-			pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
+			//pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
 
 			Draw();
 
@@ -36,6 +36,7 @@ namespace TimeTasker {
 			pnlNavbar.BackColor = Settings.ColorTheme;
 			lblSortOrder.ForeColor = Settings.TextColor;
 			btnSortOrder.ForeColor = Settings.TextColor;
+			btnTasks.BackColor = Settings.AppColor;
 
 			DrawTasks();
 
@@ -115,6 +116,7 @@ namespace TimeTasker {
 			this.LoadForm(new UserSettingsForm());
 
 		}
+
 
 		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e) {
 

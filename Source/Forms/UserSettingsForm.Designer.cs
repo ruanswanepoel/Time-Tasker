@@ -23,7 +23,6 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettingsForm));
 			this.lblColorTheme = new System.Windows.Forms.Label();
 			this.lblHideCompleted = new System.Windows.Forms.Label();
 			this.pnlNavbar = new System.Windows.Forms.Panel();
@@ -37,8 +36,12 @@
 			this.pictureBox5 = new System.Windows.Forms.PictureBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pnlColorThemeBlue = new System.Windows.Forms.Panel();
+			this.btnColorThemeBlue = new System.Windows.Forms.Panel();
+			this.pnlColorThemeRed = new System.Windows.Forms.Panel();
+			this.btnColorThemeRed = new System.Windows.Forms.Panel();
+			this.pnlColorThemeYellow = new System.Windows.Forms.Panel();
+			this.btnColorThemeYellow = new System.Windows.Forms.Panel();
 			this.pnlNavbar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
@@ -47,8 +50,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.pnlColorThemeBlue.SuspendLayout();
+			this.pnlColorThemeRed.SuspendLayout();
+			this.pnlColorThemeYellow.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// lblColorTheme
@@ -65,7 +69,7 @@
 			// 
 			this.lblHideCompleted.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblHideCompleted.ForeColor = System.Drawing.Color.White;
-			this.lblHideCompleted.Location = new System.Drawing.Point(31, 441);
+			this.lblHideCompleted.Location = new System.Drawing.Point(31, 433);
 			this.lblHideCompleted.Name = "lblHideCompleted";
 			this.lblHideCompleted.Size = new System.Drawing.Size(237, 24);
 			this.lblHideCompleted.TabIndex = 3;
@@ -73,7 +77,7 @@
 			// 
 			// pnlNavbar
 			// 
-			this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(106)))), ((int)(((byte)(130)))));
+			this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.pnlNavbar.Controls.Add(this.btnUserSettings);
 			this.pnlNavbar.Controls.Add(this.btnCalendar);
 			this.pnlNavbar.Controls.Add(this.btnTasks);
@@ -96,7 +100,7 @@
 			// 
 			// btnCalendar
 			// 
-			this.btnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
+			this.btnCalendar.BackColor = System.Drawing.Color.Transparent;
 			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault;
 			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
@@ -109,7 +113,7 @@
 			// 
 			// btnTasks
 			// 
-			this.btnTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
+			this.btnTasks.BackColor = System.Drawing.Color.Transparent;
 			this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnTasks.Image = global::TimeTasker.Properties.Resources.TasksIconDefault;
 			this.btnTasks.Location = new System.Drawing.Point(0, 0);
@@ -146,7 +150,7 @@
 			// 
 			this.lblShowWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblShowWelcome.ForeColor = System.Drawing.Color.White;
-			this.lblShowWelcome.Location = new System.Drawing.Point(31, 330);
+			this.lblShowWelcome.Location = new System.Drawing.Point(31, 327);
 			this.lblShowWelcome.Name = "lblShowWelcome";
 			this.lblShowWelcome.Size = new System.Drawing.Size(237, 24);
 			this.lblShowWelcome.TabIndex = 12;
@@ -156,7 +160,7 @@
 			// 
 			this.lblDarkmode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblDarkmode.ForeColor = System.Drawing.Color.White;
-			this.lblDarkmode.Location = new System.Drawing.Point(31, 218);
+			this.lblDarkmode.Location = new System.Drawing.Point(31, 222);
 			this.lblDarkmode.Name = "lblDarkmode";
 			this.lblDarkmode.Size = new System.Drawing.Size(237, 24);
 			this.lblDarkmode.TabIndex = 14;
@@ -164,9 +168,10 @@
 			// 
 			// pictureBox5
 			// 
+			this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox5.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
-			this.pictureBox5.Location = new System.Drawing.Point(274, 205);
+			this.pictureBox5.Location = new System.Drawing.Point(274, 209);
 			this.pictureBox5.Name = "pictureBox5";
 			this.pictureBox5.Size = new System.Drawing.Size(50, 50);
 			this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -176,9 +181,10 @@
 			// 
 			// pictureBox3
 			// 
+			this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox3.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
-			this.pictureBox3.Location = new System.Drawing.Point(274, 317);
+			this.pictureBox3.Location = new System.Drawing.Point(274, 314);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(50, 50);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -188,9 +194,10 @@
 			// 
 			// pictureBox4
 			// 
+			this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox4.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
-			this.pictureBox4.Location = new System.Drawing.Point(274, 426);
+			this.pictureBox4.Location = new System.Drawing.Point(274, 418);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(50, 50);
 			this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -198,23 +205,62 @@
 			this.pictureBox4.TabStop = false;
 			this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
 			// 
-			// pictureBox2
+			// pnlColorThemeBlue
 			// 
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(91, 102);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-			this.pictureBox2.TabIndex = 9;
-			this.pictureBox2.TabStop = false;
+			this.pnlColorThemeBlue.BackColor = System.Drawing.Color.Gray;
+			this.pnlColorThemeBlue.Controls.Add(this.btnColorThemeBlue);
+			this.pnlColorThemeBlue.Location = new System.Drawing.Point(54, 112);
+			this.pnlColorThemeBlue.Name = "pnlColorThemeBlue";
+			this.pnlColorThemeBlue.Size = new System.Drawing.Size(50, 50);
+			this.pnlColorThemeBlue.TabIndex = 16;
 			// 
-			// pictureBox1
+			// btnColorThemeBlue
 			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(35, 102);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-			this.pictureBox1.TabIndex = 8;
-			this.pictureBox1.TabStop = false;
+			this.btnColorThemeBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
+			this.btnColorThemeBlue.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnColorThemeBlue.Location = new System.Drawing.Point(3, 3);
+			this.btnColorThemeBlue.Name = "btnColorThemeBlue";
+			this.btnColorThemeBlue.Size = new System.Drawing.Size(44, 44);
+			this.btnColorThemeBlue.TabIndex = 17;
+			this.btnColorThemeBlue.Click += new System.EventHandler(this.btnColorThemeBlue_Click);
+			// 
+			// pnlColorThemeRed
+			// 
+			this.pnlColorThemeRed.BackColor = System.Drawing.Color.Gray;
+			this.pnlColorThemeRed.Controls.Add(this.btnColorThemeRed);
+			this.pnlColorThemeRed.Location = new System.Drawing.Point(121, 112);
+			this.pnlColorThemeRed.Name = "pnlColorThemeRed";
+			this.pnlColorThemeRed.Size = new System.Drawing.Size(50, 50);
+			this.pnlColorThemeRed.TabIndex = 17;
+			// 
+			// btnColorThemeRed
+			// 
+			this.btnColorThemeRed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+			this.btnColorThemeRed.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnColorThemeRed.Location = new System.Drawing.Point(3, 3);
+			this.btnColorThemeRed.Name = "btnColorThemeRed";
+			this.btnColorThemeRed.Size = new System.Drawing.Size(44, 44);
+			this.btnColorThemeRed.TabIndex = 18;
+			this.btnColorThemeRed.Click += new System.EventHandler(this.btnColorThemeRed_Click);
+			// 
+			// pnlColorThemeYellow
+			// 
+			this.pnlColorThemeYellow.BackColor = System.Drawing.Color.Gray;
+			this.pnlColorThemeYellow.Controls.Add(this.btnColorThemeYellow);
+			this.pnlColorThemeYellow.Location = new System.Drawing.Point(188, 112);
+			this.pnlColorThemeYellow.Name = "pnlColorThemeYellow";
+			this.pnlColorThemeYellow.Size = new System.Drawing.Size(50, 50);
+			this.pnlColorThemeYellow.TabIndex = 17;
+			// 
+			// btnColorThemeYellow
+			// 
+			this.btnColorThemeYellow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(136)))));
+			this.btnColorThemeYellow.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnColorThemeYellow.Location = new System.Drawing.Point(3, 3);
+			this.btnColorThemeYellow.Name = "btnColorThemeYellow";
+			this.btnColorThemeYellow.Size = new System.Drawing.Size(44, 44);
+			this.btnColorThemeYellow.TabIndex = 18;
+			this.btnColorThemeYellow.Click += new System.EventHandler(this.btnColorThemeYellow_Click);
 			// 
 			// UserSettingsForm
 			// 
@@ -222,22 +268,22 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.ClientSize = new System.Drawing.Size(360, 650);
+			this.Controls.Add(this.pnlColorThemeYellow);
 			this.Controls.Add(this.pictureBox5);
 			this.Controls.Add(this.lblDarkmode);
 			this.Controls.Add(this.pictureBox3);
 			this.Controls.Add(this.lblShowWelcome);
 			this.Controls.Add(this.pictureBox4);
-			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.pnlTitle);
 			this.Controls.Add(this.pnlNavbar);
 			this.Controls.Add(this.lblHideCompleted);
 			this.Controls.Add(this.lblColorTheme);
+			this.Controls.Add(this.pnlColorThemeBlue);
+			this.Controls.Add(this.pnlColorThemeRed);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "UserSettingsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "UserSettingsForm";
-			this.Load += new System.EventHandler(this.UserSettingsForm_Load);
 			this.pnlNavbar.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
@@ -246,8 +292,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.pnlColorThemeBlue.ResumeLayout(false);
+			this.pnlColorThemeRed.ResumeLayout(false);
+			this.pnlColorThemeYellow.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -262,12 +309,16 @@
 		private System.Windows.Forms.PictureBox btnTasks;
 		private System.Windows.Forms.Panel pnlTitle;
 		private System.Windows.Forms.Label lblTitle;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox4;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.Label lblShowWelcome;
 		private System.Windows.Forms.PictureBox pictureBox5;
 		private System.Windows.Forms.Label lblDarkmode;
+		private System.Windows.Forms.Panel pnlColorThemeBlue;
+		private System.Windows.Forms.Panel pnlColorThemeRed;
+		private System.Windows.Forms.Panel pnlColorThemeYellow;
+		private System.Windows.Forms.Panel btnColorThemeBlue;
+		private System.Windows.Forms.Panel btnColorThemeRed;
+		private System.Windows.Forms.Panel btnColorThemeYellow;
 	}
 }

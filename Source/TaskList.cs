@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Windows.Forms;
 
 namespace TimeTasker {
 
@@ -49,9 +49,9 @@ namespace TimeTasker {
 			foreach (JToken taskToken in token["Tasks"])
 				Tasks.Add(new Task(taskToken));
 
-			Changed += TaskList_Changed;
-
 			Sort();
+
+			Changed += TaskList_Changed;
 
 		}
 
@@ -67,13 +67,15 @@ namespace TimeTasker {
 			SortOrder = sortOrder;
 			allowSaving = saving;
 
-			Changed += TaskList_Changed;
-
 			Sort();
+
+			Changed += TaskList_Changed;
 
 		}
 
 		private void TaskList_Changed(object sender, TaskListChangedEventArgs e) {
+
+			MessageBox.Show("Tasklist changed");
 
 			if (allowSaving)
 				Settings.SaveTaskData();

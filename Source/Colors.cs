@@ -34,6 +34,10 @@ namespace TimeTasker {
 					color = Red;
 					break;
 				}
+				case "Yellow": {
+					color = Yellow;
+					break;
+				}
 			}
 
 			return color;

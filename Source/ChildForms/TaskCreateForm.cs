@@ -17,6 +17,8 @@ namespace TimeTasker {
 			myForm = form;
 
 			BackgroundImage = form.DarkenedBitmapFromForm();
+
+			containerBox.BackColor = Settings.ColorTheme;
 			drpPriority.SelectedIndex = 0;
 
 			Show();

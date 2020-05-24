@@ -60,6 +60,10 @@ namespace TimeTasker {
 			get => Colors.FromName(colorThemeName);
 		}
 
+		public static Color AppColor {
+			get => Darkmode ? Colors.Dark: Colors.Light;
+		}
+
 		public static Color TextColor {
 			get => Colors.TextColor;
 		}
@@ -80,17 +84,25 @@ namespace TimeTasker {
 		/// </summary>
 		public static void Initialize() {
 
+			MessageBox.Show("Begin");
+
 			VerifyAppdata();
 			LoadTaskData();
 			LoadUserData();
+
+			MessageBox.Show("End");
+
+		}
+
+		public static void SetColorTheme(string name) {
+
+			colorThemeName = name;
 
 		}
 
 		private static void VerifyAppdata() {
 
 			// TODO: Check data integrity properly
-
-			Directory.CreateDirectory(appdata);
 
 		}
 
@@ -121,7 +133,7 @@ namespace TimeTasker {
 
 		public static void SaveTaskData() {
 
-			MessageBox.Show("Save task");
+			MessageBox.Show("Save task data");
 
 			string result = "{\n";
 			result += "\"StartupList\": " + startupListIndex.ToString() + ",\n";

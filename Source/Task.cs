@@ -1,7 +1,7 @@
 ﻿
 using Newtonsoft.Json.Linq;
 using System;
-
+using System.Windows.Forms;
 
 namespace TimeTasker {
 
@@ -77,6 +77,8 @@ namespace TimeTasker {
 		}
 
 		private void Task_TaskChanged(object sender, TaskChangedEventArgs e) {
+
+			MessageBox.Show("Task changed");
 
 			if (allowSaving)
 				Settings.SaveTaskData();

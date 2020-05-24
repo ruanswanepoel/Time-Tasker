@@ -193,26 +193,6 @@ namespace TimeTasker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ThemeBlue {
-            get {
-                object obj = ResourceManager.GetObject("ThemeBlue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ThemeRed {
-            get {
-                object obj = ResourceManager.GetObject("ThemeRed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap UserIconDefault {
             get {
                 object obj = ResourceManager.GetObject("UserIconDefault", resourceCulture);

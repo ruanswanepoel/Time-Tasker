@@ -25,22 +25,22 @@ namespace TimeTasker {
 		/// </summary>
 		private void InitializeComponent() {
 			this.pnlNavbar = new System.Windows.Forms.Panel();
-			this.pnlTitle = new System.Windows.Forms.Panel();
-			this.lblTitle = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
 			this.btnUserSettings = new System.Windows.Forms.PictureBox();
 			this.btnCalendar = new System.Windows.Forms.PictureBox();
 			this.btnTasks = new System.Windows.Forms.PictureBox();
+			this.pnlTitle = new System.Windows.Forms.Panel();
+			this.lblTitle = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.pnlNavbar.SuspendLayout();
-			this.pnlTitle.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).BeginInit();
+			this.pnlTitle.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlNavbar
 			// 
-			this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(106)))), ((int)(((byte)(130)))));
+			this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.pnlNavbar.Controls.Add(this.btnUserSettings);
 			this.pnlNavbar.Controls.Add(this.btnCalendar);
 			this.pnlNavbar.Controls.Add(this.btnTasks);
@@ -48,6 +48,44 @@ namespace TimeTasker {
 			this.pnlNavbar.Name = "pnlNavbar";
 			this.pnlNavbar.Size = new System.Drawing.Size(360, 50);
 			this.pnlNavbar.TabIndex = 5;
+			// 
+			// btnUserSettings
+			// 
+			this.btnUserSettings.BackColor = System.Drawing.Color.Transparent;
+			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault;
+			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
+			this.btnUserSettings.Name = "btnUserSettings";
+			this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
+			this.btnUserSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.btnUserSettings.TabIndex = 2;
+			this.btnUserSettings.TabStop = false;
+			this.btnUserSettings.Click += new System.EventHandler(this.btnUserSettings_Click);
+			// 
+			// btnCalendar
+			// 
+			this.btnCalendar.BackColor = System.Drawing.Color.White;
+			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Default;
+			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconSelected;
+			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
+			this.btnCalendar.Name = "btnCalendar";
+			this.btnCalendar.Size = new System.Drawing.Size(120, 50);
+			this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.btnCalendar.TabIndex = 1;
+			this.btnCalendar.TabStop = false;
+			// 
+			// btnTasks
+			// 
+			this.btnTasks.BackColor = System.Drawing.Color.Transparent;
+			this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnTasks.Image = global::TimeTasker.Properties.Resources.TasksIconDefault;
+			this.btnTasks.Location = new System.Drawing.Point(0, 0);
+			this.btnTasks.Name = "btnTasks";
+			this.btnTasks.Size = new System.Drawing.Size(120, 50);
+			this.btnTasks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.btnTasks.TabIndex = 0;
+			this.btnTasks.TabStop = false;
+			this.btnTasks.Click += new System.EventHandler(this.btnTasks_Click);
 			// 
 			// pnlTitle
 			// 
@@ -83,44 +121,6 @@ namespace TimeTasker {
 			this.label1.Text = "There are no notifications";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// btnUserSettings
-			// 
-			this.btnUserSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
-			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault;
-			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
-			this.btnUserSettings.Name = "btnUserSettings";
-			this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
-			this.btnUserSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-			this.btnUserSettings.TabIndex = 2;
-			this.btnUserSettings.TabStop = false;
-			this.btnUserSettings.Click += new System.EventHandler(this.btnUserSettings_Click);
-			// 
-			// btnCalendar
-			// 
-			this.btnCalendar.BackColor = System.Drawing.Color.White;
-			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Default;
-			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconSelected;
-			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
-			this.btnCalendar.Name = "btnCalendar";
-			this.btnCalendar.Size = new System.Drawing.Size(120, 50);
-			this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-			this.btnCalendar.TabIndex = 1;
-			this.btnCalendar.TabStop = false;
-			// 
-			// btnTasks
-			// 
-			this.btnTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
-			this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnTasks.Image = global::TimeTasker.Properties.Resources.TasksIconDefault;
-			this.btnTasks.Location = new System.Drawing.Point(0, 0);
-			this.btnTasks.Name = "btnTasks";
-			this.btnTasks.Size = new System.Drawing.Size(120, 50);
-			this.btnTasks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-			this.btnTasks.TabIndex = 0;
-			this.btnTasks.TabStop = false;
-			this.btnTasks.Click += new System.EventHandler(this.btnTasks_Click);
-			// 
 			// NotificationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,10 +135,10 @@ namespace TimeTasker {
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CalendarForm";
 			this.pnlNavbar.ResumeLayout(false);
-			this.pnlTitle.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).EndInit();
+			this.pnlTitle.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
