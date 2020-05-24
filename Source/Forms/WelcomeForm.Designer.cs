@@ -72,7 +72,7 @@
             // btnProceed
             // 
             this.btnProceed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProceed.Image = global::TimeTasker.Properties.Resources.ProceedIconDefault;
+            //this.btnProceed.Image = global::TimeTasker.Properties.Resources.ProceedIconDefault;
             this.btnProceed.Location = new System.Drawing.Point(289, 583);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(50, 50);
