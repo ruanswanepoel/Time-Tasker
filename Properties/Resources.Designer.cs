@@ -143,6 +143,16 @@ namespace TimeTasker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ProceedIconDefault {
+            get {
+                object obj = ResourceManager.GetObject("ProceedIconDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SettingsIconDefault {
             get {
                 object obj = ResourceManager.GetObject("SettingsIconDefault", resourceCulture);
@@ -156,6 +166,26 @@ namespace TimeTasker.Properties {
         internal static System.Drawing.Bitmap SettingsIconSelected {
             get {
                 object obj = ResourceManager.GetObject("SettingsIconSelected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TasksIconDefault {
+            get {
+                object obj = ResourceManager.GetObject("TasksIconDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TasksIconSelected {
+            get {
+                object obj = ResourceManager.GetObject("TasksIconSelected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

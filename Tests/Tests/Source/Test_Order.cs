@@ -20,10 +20,10 @@ namespace Tests.Source
         [SetUp]
         public void SetUp()
         {
-            form = new TaskList("afwaf", new List<Task>());
-            a = new Task("a", false, new DateTime(2020, 05, 01), new DateTime(2020, 06, 01), 5);
-            b = new Task("b", false, new DateTime(2020, 05, 02), new DateTime(2020, 06, 02), 4);
-            c = new Task("c", false, new DateTime(2020, 05, 03), new DateTime(2020, 06, 03), 3);
+            form = new TaskList("afwaf", new List<Task>(), false);
+            a = new Task("a", false, new DateTime(2020, 05, 01), new DateTime(2020, 06, 01), 5, false);
+            b = new Task("b", false, new DateTime(2020, 05, 02), new DateTime(2020, 06, 02), 4, false);
+            c = new Task("c", false, new DateTime(2020, 05, 03), new DateTime(2020, 06, 03), 3, false);
             form.AddTask(a);
             form.AddTask(b);
             form.AddTask(c);

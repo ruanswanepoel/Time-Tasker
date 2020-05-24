@@ -23,7 +23,9 @@ namespace TimeTasker {
 		private static bool showWelcome = true;
 		private static bool hideCompletedTasks = false;
 		private static bool darkmode = false;
-		private static Color colorTheme = default;
+		private static string colorThemeName = "Blue";
+		//private static Color colorTheme = default;
+		
 		private static int startupListIndex = -1;
 
 
@@ -31,8 +33,7 @@ namespace TimeTasker {
 			get => showWelcome;
 			set {
 				showWelcome = value;
-				SaveTaskData();
-				// TODO: save to file
+				SaveUserData();
 			}
 		}
 
@@ -40,8 +41,7 @@ namespace TimeTasker {
 			get => hideCompletedTasks;
 			set {
 				hideCompletedTasks = value;
-				SaveTaskData();
-				// TODO: save to file
+				SaveUserData();
 			}
 		}
 
@@ -49,8 +49,7 @@ namespace TimeTasker {
 			get => darkmode;
 			set {
 				darkmode = value;
-				SaveTaskData();
-				// TODO: save to file
+				SaveUserData();
 			}
 		}
 
@@ -59,12 +58,7 @@ namespace TimeTasker {
 		}
 
 		public static Color ColorTheme {
-			get => colorTheme;
-			set {
-				colorTheme = value;
-				SaveTaskData();
-				// TODO: save to file
-			}
+			get => Colors.FromName(colorThemeName);
 		}
 
 		public static Color TextColor {
@@ -124,7 +118,7 @@ namespace TimeTasker {
 			showWelcome = json["ShowWelcome"].ToObject<bool>();
 			hideCompletedTasks = json["HideCompletedTasks"].ToObject<bool>();
 			darkmode = json["Darkmode"].ToObject<bool>();
-			colorTheme = Colors.FromName(json["ColorTheme"].ToString());
+			colorThemeName = json["ColorTheme"].ToString();
 
 		}
 
@@ -148,6 +142,19 @@ namespace TimeTasker {
 		}
 
 		private static void SaveUserData() {
+
+			string str1 = (ShowWelcome) ? "true" : "false";
+			string str2 = (HideCompletedTasks) ? "true" : "false";
+			string str3 = (Darkmode) ? "true" : "false";
+
+			string result = "{\n";
+			result += "\"ShowWelcome\": " + str1 + ",\n";
+			result += "\"HideCompletedTasks\": " + str2 + ",\n";
+			result += "\"Darkmode\": " + str3 + ",\n";
+			result += "\"ColorTheme\": " + colorThemeName + ",\n";
+			result += "}";
+
+			File.WriteAllText(userDataFile, result);
 
 		}
 

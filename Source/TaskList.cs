@@ -25,6 +25,9 @@ namespace TimeTasker {
 		public event TaskListChangedEventHandler Changed;
 
 
+		private bool allowSaving = true;
+
+
 		/// <summary>
 		/// Gets the name if the <see cref="TaskList"/>.
 		/// </summary>
@@ -46,28 +49,34 @@ namespace TimeTasker {
 			foreach (JToken taskToken in token["Tasks"])
 				Tasks.Add(new Task(taskToken));
 
-			Changed += (object o, TaskListChangedEventArgs e) => {
-				Settings.SaveTaskData();
-			};
+			Changed += TaskList_Changed;
 
 			Sort();
 
-			Settings.SaveTaskData();
-
 		}
 
-		public TaskList(string name)
-			: this(name, new List<Task>()) { }
-		public TaskList(string name, List<Task> tasks)
-			: this(name, tasks, SortOrders.Alphabetical) { }
+		public TaskList(string name, bool saving = true)
+			: this(name, new List<Task>(), saving) { }
+		public TaskList(string name, List<Task> tasks, bool saving = true)
+			: this(name, tasks, SortOrders.Alphabetical, saving) { }
 
-		public TaskList(string name, List<Task> tasks, SortOrders sortOrder) {
+		public TaskList(string name, List<Task> tasks, SortOrders sortOrder, bool saving = true) {
 
 			Name = name;
 			Tasks = tasks;
 			SortOrder = sortOrder;
+			allowSaving = saving;
+
+			Changed += TaskList_Changed;
 
 			Sort();
+
+		}
+
+		private void TaskList_Changed(object sender, TaskListChangedEventArgs e) {
+
+			if (allowSaving)
+				Settings.SaveTaskData();
 
 		}
 
@@ -117,7 +126,6 @@ namespace TimeTasker {
 			}
 
 			Changed?.Invoke(this, new TaskListChangedEventArgs(null, TaskListChangedEventArgs.ChangeTypes.Reordered));
-			Settings.SaveTaskData();
 
 		}
 

@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-
+using TimeTasker.Properties;
 
 namespace TimeTasker {
 
@@ -13,10 +13,15 @@ namespace TimeTasker {
 
 			InitializeComponent();
 
-			BackColor = Settings.MainColor;
-			// pnlTitle.BackColor = Settings.ColorTheme;
 			pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
-			pnlTitle.Refresh();
+
+			Draw();
+
+		}
+
+		public void Draw() {
+
+			BackColor = Settings.MainColor;
 			pnlNavbar.BackColor = Settings.ColorTheme;
 			lblColorTheme.ForeColor = Settings.TextColor;
 			lblDarkmode.ForeColor = Settings.TextColor;
@@ -36,8 +41,9 @@ namespace TimeTasker {
 			this.LoadForm(new NotificationForm());
 
 		}
-		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e)
-		{
+
+		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e) {
+
 			Point startPoint = new Point(0, 10);
 			Point endPoint = new Point(360, 10);
 			Color colour1 = Color.FromArgb(255, 0, 126, 230);  // #007EE6
@@ -53,7 +59,28 @@ namespace TimeTasker {
 			linearGradientBrush.InterpolationColors = colourBlend;
 
 			e.Graphics.FillRectangle(linearGradientBrush, 0, 0, 360, 50);
+
 		}
-    }
+
+		private void pictureBox5_Click(object sender, EventArgs e) {
+
+			//if ()
+			pictureBox5.Image = Resources.CheckboxCheckedAlt;
+
+		}
+
+		private void pictureBox3_Click(object sender, EventArgs e) {
+
+
+
+		}
+
+		private void pictureBox4_Click(object sender, EventArgs e) {
+
+
+
+		}
+
+	}
 
 }

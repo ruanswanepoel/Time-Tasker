@@ -16,6 +16,9 @@ namespace TimeTasker {
 		public event TaskChangedEventHandler TaskChanged;
 
 
+		private bool allowSaving = true;
+
+
 		/// <summary>
 		/// Gets the message for the <see cref="Task"/>
 		/// </summary>
@@ -47,30 +50,36 @@ namespace TimeTasker {
 			DueDate = DateTime.Parse(token["DueDate"].ToString());
 			Priority = token["Priority"].ToObject<int>();
 
+			TaskChanged += Task_TaskChanged;
+
 		}
 
-		public Task(string message)
-			: this(message, false) { }
-		public Task(string message, bool isChecked)
-			: this(message, isChecked, default) { }
-		public Task(string message, bool isChecked, DateTime dateCreated)
-			: this(message, isChecked, dateCreated, default) { }
-		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate)
-			: this(message, isChecked, dateCreated, dueDate, 0) { }
+		public Task(string message, bool saving = true)
+			: this(message, false, saving) { }
+		public Task(string message, bool isChecked, bool saving = true)
+			: this(message, isChecked, default, saving) { }
+		public Task(string message, bool isChecked, DateTime dateCreated, bool saving = true)
+			: this(message, isChecked, dateCreated, default, saving) { }
+		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate, bool saving = true)
+			: this(message, isChecked, dateCreated, dueDate, 0, saving) { }
 
-		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate, int priority) {
+		public Task(string message, bool isChecked, DateTime dateCreated, DateTime dueDate, int priority, bool saving = true) {
 
 			Message = message;
 			IsChecked = isChecked;
 			DateCreated = dateCreated;
 			DueDate = dueDate;
 			Priority = priority;
+			saving = allowSaving;
 
-			TaskChanged += (object o, TaskChangedEventArgs e) => {
+			TaskChanged += Task_TaskChanged;
+
+		}
+
+		private void Task_TaskChanged(object sender, TaskChangedEventArgs e) {
+
+			if (allowSaving)
 				Settings.SaveTaskData();
-			};
-
-			Settings.SaveTaskData();
 
 		}
 

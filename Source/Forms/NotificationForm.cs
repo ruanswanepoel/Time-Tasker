@@ -11,6 +11,8 @@ namespace TimeTasker {
 
 			InitializeComponent();
 
+			pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
+
 			Draw();
 
 		}
@@ -19,11 +21,7 @@ namespace TimeTasker {
 
 			BackColor = Settings.MainColor;
 			pnlTitle.BackColor = Settings.ColorTheme;
-			pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
-			pnlTitle.Refresh();
 			pnlNavbar.BackColor = Settings.ColorTheme;
-			pnlNavbar.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
-			pnlNavbar.Refresh();
 			label1.ForeColor = Settings.TextColor;
 		}
 
@@ -39,8 +37,8 @@ namespace TimeTasker {
 
 		}
 
-		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e)
-		{
+		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e) {
+
 			Point startPoint = new Point(0, 10);
 			Point endPoint = new Point(360, 10);
 			Color colour1 = Color.FromArgb(255, 0, 126, 230);  // #007EE6
@@ -56,6 +54,7 @@ namespace TimeTasker {
 			linearGradientBrush.InterpolationColors = colourBlend;
 
 			e.Graphics.FillRectangle(linearGradientBrush, 0, 0, 360, 50);
+
 		}
 
 	}
