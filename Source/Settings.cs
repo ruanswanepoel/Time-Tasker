@@ -84,13 +84,9 @@ namespace TimeTasker {
 		/// </summary>
 		public static void Initialize() {
 
-			MessageBox.Show("Begin");
-
 			VerifyAppdata();
 			LoadTaskData();
 			LoadUserData();
-
-			MessageBox.Show("End");
 
 		}
 

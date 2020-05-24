@@ -10,7 +10,7 @@ namespace TimeTasker {
 		public static Color Dark => Color.FromArgb(50, 50, 50);
 		public static Color Blue => Color.FromArgb(70, 125, 176);
 		public static Color Red => Color.FromArgb(145, 49, 49);
-		public static Color Yellow => Color.FromArgb(255, 255, 136);
+		public static Color Yellow => Color.FromArgb(189, 191, 63);
 
 		public static Color TextColor {
 			get {
