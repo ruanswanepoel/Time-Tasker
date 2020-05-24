@@ -49,11 +49,16 @@ namespace TimeTasker {
 			Bitmap bitmap = new Bitmap(current.Width, current.Height);
 			current.DrawToBitmap(bitmap, new Rectangle(0, 0, current.Width, current.Height));
 
-			for (int i = 0; i < bitmap.Width; i += 2) {
-				for (int j = 0; j < bitmap.Height; j += 2) {
-					//Color color = bitmap.GetPixel(i, j);
-					//bitmap.SetPixel(i, j, Color.FromArgb((int)(color.R * 0.5), (int)(color.G * 0.5), (int)(color.B * 0.5)));
-					bitmap.SetPixel(i, j, Color.Black);
+			//for (int i = 0; i < bitmap.Width; i += 2) {
+			//	for (int j = 0; j < bitmap.Height; j += 2) {
+			//		bitmap.SetPixel(i, j, Color.Black);
+			//	}
+			//}
+
+			for (int i = 0; i < bitmap.Width; i++) {
+				for (int j = 0; j < bitmap.Height; j++) {
+					Color color = bitmap.GetPixel(i, j);
+					bitmap.SetPixel(i, j, Color.FromArgb((int)(color.R * 0.5), (int)(color.G * 0.5), (int)(color.B * 0.5)));
 				}
 			}
 

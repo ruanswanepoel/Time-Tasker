@@ -24,7 +24,6 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.lblWelcome = new System.Windows.Forms.Label();
-			this.chkShowWelcome = new System.Windows.Forms.CheckBox();
 			this.lblAppname = new System.Windows.Forms.Label();
 			this.btnProceed = new System.Windows.Forms.PictureBox();
 			this.lblTitle = new System.Windows.Forms.Label();
@@ -42,21 +41,6 @@
 			this.lblWelcome.Size = new System.Drawing.Size(133, 31);
 			this.lblWelcome.TabIndex = 0;
 			this.lblWelcome.Text = "Welcome";
-			// 
-			// chkShowWelcome
-			// 
-			this.chkShowWelcome.AutoSize = true;
-			this.chkShowWelcome.Checked = true;
-			this.chkShowWelcome.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.chkShowWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.chkShowWelcome.ForeColor = System.Drawing.Color.White;
-			this.chkShowWelcome.Location = new System.Drawing.Point(12, 618);
-			this.chkShowWelcome.Name = "chkShowWelcome";
-			this.chkShowWelcome.Size = new System.Drawing.Size(121, 20);
-			this.chkShowWelcome.TabIndex = 2;
-			this.chkShowWelcome.Text = "Show on startup";
-			this.chkShowWelcome.UseVisualStyleBackColor = true;
-			this.chkShowWelcome.CheckedChanged += new System.EventHandler(this.chkShowWelcome_CheckedChanged);
 			// 
 			// lblAppname
 			// 
@@ -110,7 +94,6 @@
 			this.ClientSize = new System.Drawing.Size(360, 650);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.lblAppname);
-			this.Controls.Add(this.chkShowWelcome);
 			this.Controls.Add(this.btnProceed);
 			this.Controls.Add(this.lblSubtitle);
 			this.Controls.Add(this.lblWelcome);
@@ -128,7 +111,6 @@
 
 		private System.Windows.Forms.Label lblWelcome;
 		private System.Windows.Forms.PictureBox btnProceed;
-		private System.Windows.Forms.CheckBox chkShowWelcome;
 		private System.Windows.Forms.Label lblAppname;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;

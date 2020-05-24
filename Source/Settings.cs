@@ -24,7 +24,6 @@ namespace TimeTasker {
 		private static bool hideCompletedTasks = false;
 		private static bool darkmode = false;
 		private static string colorThemeName = "Blue";
-		//private static Color colorTheme = default;
 		
 		private static int startupListIndex = -1;
 
@@ -85,8 +84,6 @@ namespace TimeTasker {
 			LoadTaskData();
 			LoadUserData();
 
-			SaveTaskData();
-
 		}
 
 		private static void VerifyAppdata() {
@@ -124,6 +121,8 @@ namespace TimeTasker {
 
 		public static void SaveTaskData() {
 
+			MessageBox.Show("Save task");
+
 			string result = "{\n";
 			result += "\"StartupList\": " + startupListIndex.ToString() + ",\n";
 			result += "\"Tasklists\": [\n";
@@ -143,15 +142,15 @@ namespace TimeTasker {
 
 		private static void SaveUserData() {
 
-			string str1 = (ShowWelcome) ? "true" : "false";
-			string str2 = (HideCompletedTasks) ? "true" : "false";
-			string str3 = (Darkmode) ? "true" : "false";
+			string str1 = (showWelcome) ? "true" : "false";
+			string str2 = (hideCompletedTasks) ? "true" : "false";
+			string str3 = (darkmode) ? "true" : "false";
 
 			string result = "{\n";
 			result += "\"ShowWelcome\": " + str1 + ",\n";
 			result += "\"HideCompletedTasks\": " + str2 + ",\n";
 			result += "\"Darkmode\": " + str3 + ",\n";
-			result += "\"ColorTheme\": " + colorThemeName + ",\n";
+			result += "\"ColorTheme\": \"" + colorThemeName + "\"\n";
 			result += "}";
 
 			File.WriteAllText(userDataFile, result);

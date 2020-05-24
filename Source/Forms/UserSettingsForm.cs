@@ -15,6 +15,13 @@ namespace TimeTasker {
 
 			pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
 
+			if (Settings.ShowWelcome)
+				pictureBox3.Image = Resources.CheckboxCheckedAlt;
+			if (Settings.Darkmode)
+				pictureBox5.Image = Resources.CheckboxCheckedAlt;
+			if (Settings.HideCompletedTasks)
+				pictureBox4.Image = Resources.CheckboxCheckedAlt;
+
 			Draw();
 
 		}
@@ -64,23 +71,42 @@ namespace TimeTasker {
 
 		private void pictureBox5_Click(object sender, EventArgs e) {
 
-			//if ()
-			pictureBox5.Image = Resources.CheckboxCheckedAlt;
+			Settings.Darkmode = !Settings.Darkmode;
+
+			if (Settings.Darkmode)
+				pictureBox5.Image = Resources.CheckboxCheckedAlt;
+			else
+				pictureBox5.Image = Resources.CheckboxEmptyAlt;
+
+			Draw();
 
 		}
 
 		private void pictureBox3_Click(object sender, EventArgs e) {
 
+			Settings.ShowWelcome = !Settings.ShowWelcome;
 
+			if (Settings.ShowWelcome)
+				pictureBox3.Image = Resources.CheckboxCheckedAlt;
+			else
+				pictureBox3.Image = Resources.CheckboxEmptyAlt;
 
 		}
 
 		private void pictureBox4_Click(object sender, EventArgs e) {
 
+			Settings.HideCompletedTasks = !Settings.HideCompletedTasks;
 
+			if (Settings.HideCompletedTasks)
+				pictureBox4.Image = Resources.CheckboxCheckedAlt;
+			else
+				pictureBox4.Image = Resources.CheckboxEmptyAlt;
 
 		}
 
+		private void UserSettingsForm_Load(object sender, EventArgs e) {
+
+		}
 	}
 
 }

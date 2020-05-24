@@ -164,6 +164,7 @@
 			// 
 			// pictureBox5
 			// 
+			this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox5.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
 			this.pictureBox5.Location = new System.Drawing.Point(274, 205);
 			this.pictureBox5.Name = "pictureBox5";
@@ -175,6 +176,7 @@
 			// 
 			// pictureBox3
 			// 
+			this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox3.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
 			this.pictureBox3.Location = new System.Drawing.Point(274, 317);
 			this.pictureBox3.Name = "pictureBox3";
@@ -186,6 +188,7 @@
 			// 
 			// pictureBox4
 			// 
+			this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pictureBox4.Image = global::TimeTasker.Properties.Resources.CheckboxEmptyAlt;
 			this.pictureBox4.Location = new System.Drawing.Point(274, 426);
 			this.pictureBox4.Name = "pictureBox4";
@@ -234,6 +237,7 @@
 			this.Name = "UserSettingsForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "UserSettingsForm";
+			this.Load += new System.EventHandler(this.UserSettingsForm_Load);
 			this.pnlNavbar.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
