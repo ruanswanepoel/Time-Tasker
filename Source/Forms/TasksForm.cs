@@ -70,7 +70,7 @@ namespace TimeTasker {
 						TextAlign = ContentAlignment.MiddleCenter,
 						ForeColor = Settings.TextColor,
 						Font = new System.Drawing.Font("Arial", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))
-				};
+					};
 					for (int i = 0; i < completed.Count; i++) {
 						TaskControl t = new TaskControl(this, completed[i]);
 						t.Parent = pnlTasks;

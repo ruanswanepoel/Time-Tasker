@@ -167,6 +167,7 @@
   <ItemGroup>
     <None Include="Resources\Images\AppLogo.png" />
     <Content Include="Resources\Images\CheckboxCheckedAlt.png" />
+    <None Include="Resources\Images\ProceedIconSelected.png" />
     <Content Include="Resources\Images\TasksIconDefault.png" />
     <Content Include="Resources\Images\TasksIconSelected.png" />
     <None Include="Resources\Images\CheckboxEmptyAlt.png" />
