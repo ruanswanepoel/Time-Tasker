@@ -23,16 +23,24 @@ namespace TimeTasker {
 
 			myTask.TaskChanged += MyTask_TaskChanged;
 
+			Draw();
+
+		}
+
+		public void Draw() {
+
+			lblText.Text = myTask.Message;
+
+			if (myTask.IsChecked)
+				btnCheckbox.Image = Resources.CheckboxChecked;
+			else
+				btnCheckbox.Image = Resources.CheckboxEmpty;
+
 		}
 
 		private void MyTask_TaskChanged(object sender, TaskChangedEventArgs e) {
 
-			if (e.ChangeType == TaskChangedEventArgs.ChangeTypes.Checked)
-				btnCheckbox.Image = Resources.CheckboxChecked;
-			else if (e.ChangeType == TaskChangedEventArgs.ChangeTypes.Unchecked)
-				btnCheckbox.Image = Resources.CheckboxEmpty;
-			else
-				lblText.Text = myTask.Message;
+			Draw();
 
 		}
 

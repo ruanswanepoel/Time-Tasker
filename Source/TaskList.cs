@@ -75,8 +75,6 @@ namespace TimeTasker {
 
 		private void TaskList_Changed(object sender, TaskListChangedEventArgs e) {
 
-			MessageBox.Show("Tasklist changed");
-
 			if (allowSaving)
 				Settings.SaveTaskData();
 

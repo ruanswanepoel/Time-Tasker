@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -58,7 +57,7 @@ namespace TimeTasker {
 			for (int i = 0; i < bitmap.Width; i++) {
 				for (int j = 0; j < bitmap.Height; j++) {
 					Color color = bitmap.GetPixel(i, j);
-					bitmap.SetPixel(i, j, Color.FromArgb((int)(color.R * 0.5), (int)(color.G * 0.5), (int)(color.B * 0.5)));
+					bitmap.SetPixel(i, j, Color.FromArgb((int)(color.R * 0.3), (int)(color.G * 0.3), (int)(color.B * 0.3)));
 				}
 			}
 

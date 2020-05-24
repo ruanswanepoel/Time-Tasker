@@ -129,8 +129,6 @@ namespace TimeTasker {
 
 		public static void SaveTaskData() {
 
-			MessageBox.Show("Save task data");
-
 			string result = "{\n";
 			result += "\"StartupList\": " + startupListIndex.ToString() + ",\n";
 			result += "\"Tasklists\": [\n";

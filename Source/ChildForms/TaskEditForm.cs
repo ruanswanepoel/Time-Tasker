@@ -22,7 +22,11 @@ namespace TimeTasker {
 			myForm = form;
 			myTask = task;
 
-			panel1.BackColor = Settings.ColorTheme;
+			pnl1.BackColor = Settings.ColorTheme;
+			pnl2.BackColor = Settings.ColorTheme;
+			pnl3.BackColor = Settings.ColorTheme;
+			pnl4.BackColor = Settings.ColorTheme;
+
 			txtMessage.Text = task.Message;
 			dtpDueDate.Value = task.DueDate;
 			drpPriority.SelectedIndex = task.Priority;
