@@ -163,6 +163,16 @@ namespace TimeTasker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap StickyNoteLogo {
+            get {
+                object obj = ResourceManager.GetObject("StickyNoteLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ThemeBlue {
             get {
                 object obj = ResourceManager.GetObject("ThemeBlue", resourceCulture);
