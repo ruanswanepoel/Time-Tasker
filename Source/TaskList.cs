@@ -151,28 +151,28 @@ namespace TimeTasker {
 
 		}
 
-		private void SortByAlphabetical() {
+		public void SortByAlphabetical() {
 
 			Tasks = Tasks.OrderBy(x => x.Message).ToList();
 			SortOrder = SortOrders.Alphabetical;
 
 		}
 
-		private void SortByDateCreated() {
+		public void SortByDateCreated() {
 
 			Tasks = Tasks.OrderBy(x => x.DateCreated).ToList();
 			SortOrder = SortOrders.DateCreated;
 
 		}
 
-		private void SortByDueDate() {
+		public void SortByDueDate() {
 
 			Tasks = Tasks.OrderBy(x => x.DueDate).ToList();
 			SortOrder = SortOrders.DueDate;
 
 		}
 
-		private void SortByPriority() {
+		public void SortByPriority() {
 
 			Tasks = Tasks.OrderByDescending(x => x.Priority).ToList();
 			SortOrder = SortOrders.Priority;
