@@ -21,12 +21,21 @@ namespace Tests.Source
         public void SetUp()
         {
             form = new TaskList("afwaf", new List<Task>(), false);
-            a = new Task("a", false, new DateTime(2020, 05, 01), new DateTime(2020, 06, 01), 5, false);
-            b = new Task("b", false, new DateTime(2020, 05, 02), new DateTime(2020, 06, 02), 4, false);
+            a = new Task("a", false, new DateTime(2020, 05, 01), new DateTime(2020, 06, 01), 4, false);
+            b = new Task("b", false, new DateTime(2020, 05, 02), new DateTime(2020, 06, 02), 5, false);
             c = new Task("c", false, new DateTime(2020, 05, 03), new DateTime(2020, 06, 03), 3, false);
             form.AddTask(a);
             form.AddTask(b);
             form.AddTask(c);
+        }
+
+        [Test]
+        public void SortOrderCreated()
+        {
+            form.SortByDateCreated();
+            form.Tasks[0].Equals(a); //Message = "a"
+            form.Tasks[1].Equals(b); //Message = "b"
+            form.Tasks[2].Equals(c); //Message = "c"
         }
 
         [Test]
@@ -36,9 +45,25 @@ namespace Tests.Source
             form.Tasks[0].Equals(a); //Message = "a"
             form.Tasks[1].Equals(b); //Message = "b"
             form.Tasks[2].Equals(c); //Message = "c"
-
         }
 
+        [Test]
+        public void SortOrderPriority()
+        {
+            form.SortByPriority();
+            form.Tasks[0].Equals(b); //Message = "a"
+            form.Tasks[1].Equals(a); //Message = "b"
+            form.Tasks[2].Equals(c); //Message = "c"
+        }
+
+        [Test]
+        public void SortOrderDueDate()
+        {
+            form.SortByDueDate();
+            form.Tasks[0].Equals(c); //Message = "a"
+            form.Tasks[1].Equals(b); //Message = "b"
+            form.Tasks[2].Equals(a); //Message = "c"
+        }
 
 
 
