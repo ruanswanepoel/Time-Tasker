@@ -22,9 +22,6 @@ namespace TimeTasker {
 			SetTasklist(Settings.StartupList);
 			btnSortOrder.Text = Tasklist.SortOrder.ToFriendlyString();
 			Tasklist.Changed += Tasklist_Changed;
-
-			//pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
-
 			Draw();
 
 		}

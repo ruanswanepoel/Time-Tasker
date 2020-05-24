@@ -30,11 +30,11 @@
             // 
             // lblText
             // 
-            this.lblText.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblText.BackColor = System.Drawing.Color.Transparent;
             this.lblText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.Location = new System.Drawing.Point(0, 0);
+            this.lblText.Location = new System.Drawing.Point(10, 0);
             this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(280, 40);
+            this.lblText.Size = new System.Drawing.Size(270, 40);
             this.lblText.TabIndex = 2;
             this.lblText.Text = "My task to complete";
             this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -42,7 +42,7 @@
             // 
             // btnCheckbox
             // 
-            this.btnCheckbox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCheckbox.BackColor = System.Drawing.Color.Transparent;
             this.btnCheckbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckbox.Image = global::TimeTasker.Properties.Resources.CheckboxEmpty;
             this.btnCheckbox.Location = new System.Drawing.Point(280, 0);
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.btnCheckbox);
             this.Controls.Add(this.lblText);
             this.Name = "TaskControl";

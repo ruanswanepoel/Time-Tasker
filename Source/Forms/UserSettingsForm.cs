@@ -107,7 +107,6 @@ namespace TimeTasker {
 
 		}
 
-
 		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e) {
 
 			Point startPoint = new Point(0, 10);

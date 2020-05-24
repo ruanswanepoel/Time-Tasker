@@ -11,9 +11,6 @@ namespace TimeTasker {
 		public NotificationForm() {
 
 			InitializeComponent();
-
-			//pnlTitle.Paint += new PaintEventHandler(pnlHorizontalLinearGradient);
-
 			Draw();
 
 		}
@@ -38,7 +35,6 @@ namespace TimeTasker {
 			this.LoadForm(new UserSettingsForm());
 
 		}
-
 
 		private void pnlHorizontalLinearGradient(object sender, PaintEventArgs e) {
 
