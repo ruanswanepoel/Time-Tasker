@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -42,6 +43,47 @@ namespace TimeTasker {
 
 		}
 
+		public void DrawTasks() {
+
+			pnlTasks.Controls.Clear();
+
+			List<Task> unCompleted = new List<Task>();
+			List<Task> completed = new List<Task>();
+
+			foreach (Task t in Tasklist.Tasks) {
+				if (t.IsChecked)
+					completed.Add(t);
+				else
+					unCompleted.Add(t);
+			}
+
+			for (int i = 0; i < unCompleted.Count; i++) {
+				TaskControl t = new TaskControl(this, unCompleted[i]);
+				t.Parent = pnlTasks;
+				t.Location = new Point((Width - t.Width) / 2, (t.Height + c_MARGIN_Y) * i);
+			}
+
+			if (!Settings.HideCompletedTasks) {
+				if (completed.Count > 0) {
+					Label lbl = new Label() {
+						Parent = pnlTasks,
+						Location = new Point(0, (40 + c_MARGIN_Y) * unCompleted.Count),
+						Size = new Size(360, 20),
+						Text = "Copmleted",
+						TextAlign = ContentAlignment.MiddleCenter,
+						ForeColor = Settings.TextColor,
+						Font = new System.Drawing.Font("Arial", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))
+				};
+					for (int i = 0; i < completed.Count; i++) {
+						TaskControl t = new TaskControl(this, completed[i]);
+						t.Parent = pnlTasks;
+						t.Location = new Point((Width - t.Width) / 2, (t.Height + c_MARGIN_Y) * i + ((t.Height + c_MARGIN_Y) * unCompleted.Count) + 25);
+					}
+				}
+			}
+
+		}
+
 		public void SetTasklist(TaskList list) {
 
 			Tasklist = list;
@@ -50,17 +92,7 @@ namespace TimeTasker {
 
 			DrawTasks();
 
-		}
-
-		public void DrawTasks() {
-
-			pnlTasks.Controls.Clear();
-
-			for (int i = 0; i < Tasklist.Tasks.Count; i++) {
-				TaskControl t = new TaskControl(this, Tasklist.Tasks[i]);
-				t.Parent = pnlTasks;
-				t.Location = new Point((Width - t.Width) / 2, (t.Height + c_MARGIN_Y) * i);
-			}
+			Settings.SetStartupListIndex(list);
 
 		}
 
