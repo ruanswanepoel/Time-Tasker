@@ -24,9 +24,9 @@ namespace Tests.Source
             a = new Task("a", false, new DateTime(2020, 05, 01), new DateTime(2020, 06, 01), 5);
             b = new Task("b", false, new DateTime(2020, 05, 02), new DateTime(2020, 06, 02), 4);
             c = new Task("c", false, new DateTime(2020, 05, 03), new DateTime(2020, 06, 03), 3);
-            form.AddTask(a);
-            form.AddTask(b);
-            form.AddTask(c);
+            form.Tasklist.AddTask(a);
+            form.Tasklist.AddTask(b);
+            form.Tasklist.AddTask(c);
         }
 
         [Test]
@@ -36,6 +36,7 @@ namespace Tests.Source
             form.Tasklist.Tasks[0].Equals(a); //Message = "a"
             form.Tasklist.Tasks[1].Equals(b); //Message = "b"
             form.Tasklist.Tasks[2].Equals(c); //Message = "c"
+
         }
 
 
