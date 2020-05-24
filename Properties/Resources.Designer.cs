@@ -113,9 +113,29 @@ namespace TimeTasker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CheckboxCheckedAlt {
+            get {
+                object obj = ResourceManager.GetObject("CheckboxCheckedAlt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CheckboxEmpty {
             get {
                 object obj = ResourceManager.GetObject("CheckboxEmpty", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CheckboxEmptyAlt {
+            get {
+                object obj = ResourceManager.GetObject("CheckboxEmptyAlt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

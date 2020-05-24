@@ -51,6 +51,7 @@ namespace TimeTasker {
 			// 
 			// btnUserSettings
 			// 
+			this.btnUserSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault;
 			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
@@ -63,6 +64,7 @@ namespace TimeTasker {
 			// 
 			// btnCalendar
 			// 
+			this.btnCalendar.BackColor = System.Drawing.Color.White;
 			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Default;
 			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconSelected;
 			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
@@ -74,6 +76,7 @@ namespace TimeTasker {
 			// 
 			// btnTasks
 			// 
+			this.btnTasks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.btnTasks.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnTasks.Image = global::TimeTasker.Properties.Resources.UserIconDefault;
 			this.btnTasks.Location = new System.Drawing.Point(0, 0);

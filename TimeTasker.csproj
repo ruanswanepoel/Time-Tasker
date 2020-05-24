@@ -165,6 +165,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Images\CheckboxCheckedAlt.png" />
+    <Content Include="Resources\Images\TasksIconDefault.png" />
+    <Content Include="Resources\Images\TasksIconSelected.png" />
     <None Include="Resources\Images\CheckboxEmptyAlt.png" />
     <None Include="Resources\Images\ButtonPlusAlt.png" />
     <None Include="Resources\Images\ProceedIconDefault.png" />

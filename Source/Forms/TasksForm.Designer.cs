@@ -50,6 +50,7 @@ namespace TimeTasker {
 			// 
 			// pnlTitle
 			// 
+			this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.pnlTitle.Controls.Add(this.btnMenu);
 			this.pnlTitle.Controls.Add(this.lblList);
 			this.pnlTitle.Location = new System.Drawing.Point(0, 0);
@@ -57,10 +58,10 @@ namespace TimeTasker {
 			this.pnlTitle.Name = "pnlTitle";
 			this.pnlTitle.Size = new System.Drawing.Size(360, 50);
 			this.pnlTitle.TabIndex = 0;
-			this.pnlTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHorizontalLinearGradient);
 			// 
 			// btnMenu
 			// 
+			this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnMenu.Image = global::TimeTasker.Properties.Resources.ButtonHamMenu;
 			this.btnMenu.Location = new System.Drawing.Point(0, 0);
@@ -91,10 +92,10 @@ namespace TimeTasker {
 			this.pnlNavbar.Name = "pnlNavbar";
 			this.pnlNavbar.Size = new System.Drawing.Size(360, 50);
 			this.pnlNavbar.TabIndex = 4;
-			this.pnlNavbar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHorizontalLinearGradient);
 			// 
 			// btnUserSettings
 			// 
+			this.btnUserSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault;
 			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
@@ -107,6 +108,7 @@ namespace TimeTasker {
 			// 
 			// btnCalendar
 			// 
+			this.btnCalendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault;
 			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
@@ -119,6 +121,7 @@ namespace TimeTasker {
 			// 
 			// btnTasks
 			// 
+			this.btnTasks.BackColor = System.Drawing.Color.White;
 			this.btnTasks.Image = global::TimeTasker.Properties.Resources.UserIconSelected;
 			this.btnTasks.Location = new System.Drawing.Point(0, 0);
 			this.btnTasks.Name = "btnTasks";

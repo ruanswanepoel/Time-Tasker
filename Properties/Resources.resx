@@ -121,20 +121,17 @@
   <data name="BellIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\BellIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BellIconSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\BellIconSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ButtonHamMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ButtonHamMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ButtonPlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\ButtonPlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CheckboxChecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\CheckboxChecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="CheckboxEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\CheckboxEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ThemeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\ThemeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\UserIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SettingsIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\SettingsIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,16 +139,25 @@
   <data name="SettingsIconSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\SettingsIconSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ThemeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\ThemeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CheckboxChecked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\CheckboxChecked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserIconSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\UserIconSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BellIconSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\BellIconSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ButtonHamMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\ButtonHamMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ThemeRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\ThemeRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UserIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\UserIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CheckboxEmptyAlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\CheckboxEmptyAlt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UserIconSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\UserIconSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CheckboxCheckedAlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\CheckboxCheckedAlt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
