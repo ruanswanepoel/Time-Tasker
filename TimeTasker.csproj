@@ -165,6 +165,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Images\CheckboxEmptyAlt.png" />
+    <None Include="Resources\Images\ButtonPlusAlt.png" />
+    <None Include="Resources\Images\ProceedIconDefault.png" />
     <None Include="Resources\Images\ThemeRed.png" />
     <None Include="Resources\Images\ThemeBlue.png" />
     <None Include="Resources\Images\SettingsIconSelected.png" />
