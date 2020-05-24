@@ -31,7 +31,6 @@ namespace TimeTasker {
 			this.lblList = new System.Windows.Forms.Label();
 			this.pnlNavbar = new System.Windows.Forms.Panel();
 			this.btnUserSettings = new System.Windows.Forms.PictureBox();
-			this.btnCalendar = new System.Windows.Forms.PictureBox();
 			this.btnTasks = new System.Windows.Forms.PictureBox();
 			this.pnlTasks = new System.Windows.Forms.Panel();
 			this.pnlSortSettings = new System.Windows.Forms.Panel();
@@ -42,7 +41,6 @@ namespace TimeTasker {
 			((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
 			this.pnlNavbar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).BeginInit();
 			this.pnlSortSettings.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
@@ -87,7 +85,6 @@ namespace TimeTasker {
 			// 
 			this.pnlNavbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(230)))));
 			this.pnlNavbar.Controls.Add(this.btnUserSettings);
-			this.pnlNavbar.Controls.Add(this.btnCalendar);
 			this.pnlNavbar.Controls.Add(this.btnTasks);
 			this.pnlNavbar.Location = new System.Drawing.Point(0, 600);
 			this.pnlNavbar.Name = "pnlNavbar";
@@ -99,26 +96,13 @@ namespace TimeTasker {
 			this.btnUserSettings.BackColor = System.Drawing.Color.Transparent;
 			this.btnUserSettings.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnUserSettings.Image = global::TimeTasker.Properties.Resources.SettingsIconDefault;
-			this.btnUserSettings.Location = new System.Drawing.Point(240, 0);
+			this.btnUserSettings.Location = new System.Drawing.Point(180, 0);
 			this.btnUserSettings.Name = "btnUserSettings";
-			this.btnUserSettings.Size = new System.Drawing.Size(120, 50);
+			this.btnUserSettings.Size = new System.Drawing.Size(180, 50);
 			this.btnUserSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.btnUserSettings.TabIndex = 2;
 			this.btnUserSettings.TabStop = false;
 			this.btnUserSettings.Click += new System.EventHandler(this.btnUserSettings_Click);
-			// 
-			// btnCalendar
-			// 
-			this.btnCalendar.BackColor = System.Drawing.Color.Transparent;
-			this.btnCalendar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCalendar.Image = global::TimeTasker.Properties.Resources.BellIconDefault;
-			this.btnCalendar.Location = new System.Drawing.Point(120, 0);
-			this.btnCalendar.Name = "btnCalendar";
-			this.btnCalendar.Size = new System.Drawing.Size(120, 50);
-			this.btnCalendar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-			this.btnCalendar.TabIndex = 1;
-			this.btnCalendar.TabStop = false;
-			this.btnCalendar.Click += new System.EventHandler(this.btnCalendar_Click);
 			// 
 			// btnTasks
 			// 
@@ -126,7 +110,7 @@ namespace TimeTasker {
 			this.btnTasks.Image = global::TimeTasker.Properties.Resources.TasksIconSelected;
 			this.btnTasks.Location = new System.Drawing.Point(0, 0);
 			this.btnTasks.Name = "btnTasks";
-			this.btnTasks.Size = new System.Drawing.Size(120, 50);
+			this.btnTasks.Size = new System.Drawing.Size(180, 50);
 			this.btnTasks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
 			this.btnTasks.TabIndex = 0;
 			this.btnTasks.TabStop = false;
@@ -208,7 +192,6 @@ namespace TimeTasker {
 			((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
 			this.pnlNavbar.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnUserSettings)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnCalendar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnTasks)).EndInit();
 			this.pnlSortSettings.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
@@ -224,7 +207,6 @@ namespace TimeTasker {
 		private System.Windows.Forms.PictureBox btnMenu;
 		private System.Windows.Forms.PictureBox btnAdd;
 		private System.Windows.Forms.PictureBox btnUserSettings;
-		private System.Windows.Forms.PictureBox btnCalendar;
 		private System.Windows.Forms.PictureBox btnTasks;
 		private System.Windows.Forms.Panel pnlTasks;
 		private System.Windows.Forms.Panel pnlSortSettings;

@@ -24,7 +24,7 @@ namespace TimeTasker {
 		private static bool hideCompletedTasks = false;
 		private static bool darkmode = false;
 		private static string colorThemeName = "Blue";
-		
+
 		private static int startupListIndex = -1;
 
 
@@ -61,7 +61,7 @@ namespace TimeTasker {
 		}
 
 		public static Color AppColor {
-			get => Darkmode ? Colors.Dark: Colors.Light;
+			get => Darkmode ? Colors.Dark : Colors.Light;
 		}
 
 		public static Color TextColor {
@@ -93,6 +93,20 @@ namespace TimeTasker {
 		public static void SetColorTheme(string name) {
 
 			colorThemeName = name;
+			SaveUserData();
+
+		}
+
+		public static void SetStartupListIndex(TaskList list) {
+
+			for (int i = 0; i < Lists.Count; i++) {
+				if (Lists[i] == list) {
+					startupListIndex = i;
+					break;
+				}
+			}
+
+			SaveTaskData();
 
 		}
 

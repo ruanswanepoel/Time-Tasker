@@ -57,6 +57,8 @@ namespace TimeTasker {
 			else
 				myTask.Check();
 
+			myForm.DrawTasks();
+
 		}
 
 	}
