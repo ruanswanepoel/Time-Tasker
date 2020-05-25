@@ -13,7 +13,7 @@ namespace TimeTasker {
 		private const int c_MARGIN_Y = 5;
 
 		private readonly TasksForm myForm;
-		private readonly List<TaskList> lists = new List<TaskList>();
+		public readonly List<TaskList> lists = new List<TaskList>();
 
 
 		public HamMenuForm(TasksForm form) {
@@ -27,8 +27,9 @@ namespace TimeTasker {
 
 			DrawLists();
 			Show();
-
 		}
+
+	
 
 		public void SelectList(TaskList list) {
 

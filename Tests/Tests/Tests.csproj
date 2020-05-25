@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Test_HamMenu.cs" />
     <Compile Include="Source\Test_Order.cs" />
     <Compile Include="Source\Test_Task.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

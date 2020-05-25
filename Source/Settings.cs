@@ -73,11 +73,11 @@ namespace TimeTasker {
 		}
 
 		public static TaskList StartupList {
-			get => Lists[startupListIndex];
+			 get => Lists[startupListIndex];
+		
 		}
 
-		public static List<TaskList> Lists { get; private set; }
-
+		public static List<TaskList> Lists { get; set; }
 
 		/// <summary>
 		/// Initializes, verifies and loads all Appdata
