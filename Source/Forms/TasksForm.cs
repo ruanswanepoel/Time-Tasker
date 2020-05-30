@@ -27,6 +27,11 @@ namespace TimeTasker {
 
 		}
 
+		public TasksForm(TaskList list)
+		{
+			Tasklist = list;
+		}
+
 		public void Draw() {
 
 			BackColor = Settings.MainColor;

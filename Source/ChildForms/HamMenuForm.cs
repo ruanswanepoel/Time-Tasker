@@ -29,6 +29,12 @@ namespace TimeTasker {
 			Show();
 		}
 
+		public HamMenuForm(List<TaskList> list, TaskList list2) 
+		{
+			lists = list;
+			myForm = new TasksForm(list2);
+		}
+
 	
 
 		public void SelectList(TaskList list) {

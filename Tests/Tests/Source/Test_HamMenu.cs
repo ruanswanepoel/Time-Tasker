@@ -18,12 +18,14 @@ namespace Tests.Source
         [SetUp]
         public void SetUp()
         {
-            //List<TaskList> MyTasks = new List<TaskList>();
-            //MyTasks.Add(new TaskList("this list", new List<Task>(), false));
-            //Settings.Lists = MyTasks;
+            List<TaskList> MyTasks = new List<TaskList>();
+            MyTasks.Add(new TaskList("this list", new List<Task>(), false));
 
-            menu = new HamMenuForm(new TasksForm());
+
             fakeList = new TaskList("A cool default list", new List<Task>(), false);
+            menu = new HamMenuForm(MyTasks, fakeList);
+            
+            
         }
         [Test]
         public void Test_Add_List_To_Hamburger_Menu()
