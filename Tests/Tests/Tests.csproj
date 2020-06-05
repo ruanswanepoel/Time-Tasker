@@ -86,10 +86,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\TimeTasker-Backbone\TimeTasker-Backbone.csproj">
-      <Project>{6396406b-a218-4426-a7b9-64ba6f0718b8}</Project>
-      <Name>TimeTasker-Backbone</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\TimeTasker.csproj">
       <Project>{384f8fa2-bd7d-4b0a-ab9b-d7414b71f4d3}</Project>
       <Name>TimeTasker</Name>
