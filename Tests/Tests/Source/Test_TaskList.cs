@@ -9,7 +9,7 @@ using System.Security.Cryptography;
 namespace Tests.Source
 {
     [TestFixture]
-    public class Test_Order
+    public class Test_TaskList
     {
         TaskList form;
         Task a;
