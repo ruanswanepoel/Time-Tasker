@@ -1,5 +1,7 @@
 # Time-Tasker
 
+Todo/Task Scheduler Application Using Windows Forms
+
 ## Setup
 ```
 1. Deploy -> Run setup.exe
